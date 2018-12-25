@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.不管条件是否成立，都要进行变量提升；
+    // 在最新版本的浏览器中，对function函数，只声明不定义；；
+    // 在旧版本浏览器中，带function的不仅声明，还要定义；
+    /*console.log(num);// undefined
+    console.log(ef);// undefined
+    if([]){
+        // 在块级作用下，定义的函数，只要一进块级作用域，它会立即开辟空间，并且赋值；
+        console.log(ef);// 整个函数
+        var  num = 100;
+        function ef() {
+
+        }
+    }*/
+    // in : 检测属性名是否属于这个对象；如果属于返回true，不属于返回false；
+    /*var obj = {a:1};
+    console.log("a" in obj);
+    console.log("b" in obj);*/
+    // 在变量提升阶段，全局变量给window新增的键值对；
+    //debugger
+  /*  if(!("a" in window)){
+        var a = 100;
+    }
+    console.log(a);*/// undefined;
+    // 2.变量提升只发生等号的左边
+   /* console.log(f);
+    var  obj = {
+        fn:function f(){
+
+        }
+    }
+    box.onclick = function () {
+
+    }
+    console.log(g);
+    var fn = function g(){
+
+    }*/
+
+   // 3.return下面的代码需要进行变量提升；但是return后面的代码不进行变量提升；
+    // return : 1. 返回值  2. 中止代码不再向下运行
+   /* function fn() {
+        console.log(rr);
+        console.log(ww);
+        console.log(a);
+        return function a() {
+
+        };
+        var  rr = 1;
+        function ww() {
+
+        }
+    }
+    fn();*/
+
+   // 4.如果变量重复，不需要重新声明，但是要重新定义；
+   /* console.log(fn);// 函数
+    var  fn =88;
+    function fn() {
+
+    }
+    console.log(fn);*///88
+   /* fn();// 3
+    function fn() {// 在变量提升阶段已经对这段代码解析过了，代码运行时，不再解析；
+        console.log(1);
+    }
+    fn()// 3
+    function fn() {
+        console.log(2);
+    }
+    fn=100;
+    function fn() {
+        console.log(3);
+    }
+    fn();*/// 报错；
+
+    // 5.匿名函数不需要进行变量提升
+    // 当代码解析到89行时，会先开辟一个堆内存，然后马上形成一个栈内存；
+    (function () {
+        console.log(1);
+    })();
+</script>
+</body>
+</html>

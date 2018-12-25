@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<script src="1.js"></script>
+<script src="2.js"></script>-->
+<script>
+    //console.log(a);
+    //正式课第一周：  1. git   变量提升     作用域      this    面向对象；
+    //学习目的：让大家了解代码的执行规则，代码的执行顺序
+    /*console.log(num);// undefined
+    var  num = 100;
+    console.log(num);// 100
+
+    fn();
+    function fn(){
+        console.log(1);
+    }*/
+    //fn();
+
+    // 全局作用域：当浏览器打开页面时，浏览器会给当前JS代码提供一个可以执行的运行环境，那么这个环境就是全局作用域；
+    // 一个页面只对应一个全局作用域;在当前的全局作用域，浏览器给当前的作用域提供了全局的对象叫window；
+    // JS 是单线程的，每次只能执行一行代码；
+
+    // 全局变量
+    // 在全局作用域定义的变量都是全局变量
+    // 全局变量和在全局下定义函数都会给window新增一个键值对；
+    // 1.
+    var  a = 99;
+    console.log(a);// 99
+    console.log(window);// 对象；
+    // 2.
+    b = 11;
+    console.log(b);
+    // 3.
+    function fn() {
+        var b = 18;// 私有变量不会新增；
+    }
+    fn();
+    /*function fn() {
+        for(var i=0;i<10;i++){
+        }
+    }*/
+</script>
+</body>
+</html>

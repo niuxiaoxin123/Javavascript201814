@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f() {
+    }
+    // 1. 函数表达式
+    var s = function () {
+        console.log(100);
+    };
+    s();
+    // 2. 自执行函数：自己执行
+    (function (a,b) {
+        console.log(300);
+    })(1,2);
+    !function () {
+        console.log(400);
+    }();
+    +function () {
+        console.log(500);
+    }();
+    -function () {
+        console.log(600);
+    }();
+    ~function () {
+        console.log(700);
+    }()
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  Date的实例
+    //console.log(Date);
+    // new + 函数： 创建这个函数的实例；实例是个对象数据类型；
+    // new 是个关键字；
+    //console.log(new Date());// 获取当前电脑的系统时间；
+    var date = new Date();
+    console.log(date);//Wed Dec 19 2018 17:09:34 GMT+0800
+    // 1.getFullYear : 返回时间年；
+    console.log(date.getFullYear());// 2018
+    // 2.getMonth ：返回时间月【0-11】
+    console.log(date.getMonth());// 11
+    //3.getDate() : 返回当前日 【1-31】
+    console.log(date.getDate());
+    // 4.getDay: 返回星期几；【0-6】星期日是0；
+    console.log(date.getDay());
+    // 5getHours ： 返回小时
+    console.log(date.getHours());// [0-23]
+    //6.getMinutes: 返回时间的分钟数
+    console.log(date.getMinutes());//[0-59]
+    // 7.getSeconds: 获取时间秒
+    console.log(date.getSeconds());
+    // 8.getMilliseconds: 获取毫秒数
+    console.log(date.getMilliseconds());//[0-999]
+    //console.log(typeof date);// "object"
+    // 9.
+    console.log(date.getTime());// 当前时间距离1970-1-1上午8:00 毫秒差
+    console.log(Date.now());// 经常用于产生一个时间戳；产生一个唯一的数字；
+    console.log(Date.now());// 经常用于产生一个时间戳；产生一个唯一的数字；
+</script>
+</body>
+</html>

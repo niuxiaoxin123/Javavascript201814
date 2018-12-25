@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"><div id="a"></div>
+    <!---->
+    <div id="second"></div>
+    <p>112233</p>
+    <!--dhd-->
+    <!--nj-->
+    <div id="last"></div>
+</div>
+<script>
+    // 1. 获取元素的方式  八种；
+    // 2. 元素的节点以及属性
+    // 3. 动态操作DOM元素的方法
+
+    // DOM树-->CSS树---> render树
+    // 节点是组成DOM树基本单位；
+    // 节点分为四种 元素节点  文本节点  注释节点   document；他们都是对象数据类型的
+    // 换行和空格都属于文本节点；
+    var  box = document.getElementById("box");
+    // console.dir(box);
+    //             nodeType     nodeName      nodeValue
+    // 元素节点          1          大写的标签名      null
+    // 文本节点          3          #text           文本内容
+    // 注释节点          8          #comment        注释内容
+    // document        9          #document        null
+
+    // 1.childNodes : 当前元素所有的子节点
+    // 2. children : 当前元素的所有的子元素节点；
+    // 3. parentNode : 获取当前元素的父亲节点  document 是根节点，他的父亲节点是null;
+    // 4. previousSibling  : 上一个哥哥节点
+    // previousElementSibling : 上一个哥哥元素节点 （IE8以下是不兼容的）
+    // 5. nextSibling  : 下一个弟弟节点
+    //  nextElementSibling : 下一个弟弟元素节点；（IE8以下是不兼容的）
+    // 6. firstChild  : 第一个子节点
+    //  firstElementChild : 第一个子元素节点 （IE8以下是不兼容的）
+    // 7.lastChild   : 最后一个子节点
+    // lastElementChild : 最后一个子元素节点 （IE8以下是不兼容的）
+    /*console.log(box.childNodes);
+    console.log(box.children);
+    console.log(last.parentNode.parentNode.parentNode.parentNode.parentNode);*/
+   // console.log(last.previousSibling);
+   /* var last= document.getElementById("last");
+    console.log(last.previousElementSibling);*/
+
+    /*console.log(second.nextSibling);
+    console.log(second.nextElementSibling);
+
+    console.log(box.firstChild);
+    console.log(box.lastChild);
+    console.log(box.lastElementChild);*/
+
+
+    // 获取上一个哥哥元素节点，兼容所有浏览器；
+    function getBrother(curEle) {
+        //console.log(curEle);
+        var pre = curEle.previousSibling;
+        while(pre){
+            if(pre.nodeType===1){
+                return pre;
+            }
+            pre = pre.previousSibling;// pre等于哥哥节点的哥哥节点；
+        }
+        return null;
+    }
+    var last= document.getElementById("last");
+    console.log(getBrother(a));
+
+
+
+</script>
+</body>
+</html>

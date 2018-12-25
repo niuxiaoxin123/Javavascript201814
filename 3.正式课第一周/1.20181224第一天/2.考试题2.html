@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. typeof
+    // 1. 返回一个字符串，字符串里面代表当前的数据类型
+    // 2. 不能区分对象数据类型下具体的数据类型
+    // 3. typeof null-->"object"
+
+   /* var num = 1;
+    console.log(typeof num);// "number"
+    var  str = "aa";
+    console.log(typeof str);*///"string"
+    /*var obj ={};
+    var arr = [];
+    console.log(typeof obj);//"object"
+    console.log(typeof arr);*///"object"
+    // 2.instanceof
+    // 3.constructor
+    // 4.Object.prototype.toString.call();
+
+    // 4.形参和arguments
+   /* function fn(a,b,c) {
+        a=100;// 形参和arguments存在映射关系；
+        console.log(arguments);//
+    }
+    fn(1,2,3)*/
+    // setTimeout  setInterval
+    // 浏览器有最小的识别时间；谷歌最小的识别5-7ms;火狐的识别时间7ms--9ms；IE的识别时间12ms-16ms；
+    var timer = setInterval(function () {
+        console.log(100);
+    },5);
+    // 当浏览器加载到这一行时，会立即记录定时器的开始时间；进过2000ms之后，做这件事；
+    setTimeout(function () {
+        clearInterval(timer)
+    },2000);
+
+    // DOM : 节点类型   属性  动态操作DOM的方法；
+    //1.document.getElementById("div1");
+    // document.getElementsByClassName("box")[0]
+    // document.getElementsByTagName("div")[0]
+    //2.var op  = document.createElement("p");
+    // document.body.appendChild(op);
+    //3.previousSibling
+    // 4.substr  substring  slice
+    // 5.replace
+
+    // 三、数组
+    // 1. ary.push  ary[ary.length] = 199;  ary.splice(ary.length,0,1)
+    // 2.ary.pop()  ary.length-- ary.splice(ary.length-1,1)
+    // 3.forEach  map
+    // 4.ary.sort(function(a,b){return a-b})
+    // 5.ary.slice(n-1,m)
+
+    // 四. Math
+    // Math.round((Math.random()*(m-n)+n))
+    // Math.max  Math.min
+   //
+    // 五、任意数求和的功能；
+    /*function sum(){
+        // arguments;
+        var  total = 0;
+        for(var i=0;i<arguments.length;i++){
+            var  cur = Number(arguments[i]);// Number 转数字
+            if(!isNaN(cur)){// 如果是数字，返回false；
+                total+=cur;
+            }
+        }
+        console.log(total);// 在控制台输出；进行调试
+        //return total;  return 出的值就是函数的返回值；a接收就是返回值；
+    }
+    var  a = sum(1,2,3,"3px",false,[],100);
+    console.log(a);*/// undefined
+    // 六.递归： 在函数体内部自己调用自己；
+    function fn(num) {
+        if(num>100){
+            return null;
+        }
+        if(num%3===0&&num%5===0){
+            // 既能被3整除，也能被5 整除；
+            return num +fn(num+1);
+        }else{
+            return  fn(num+1);
+        }
+    }
+    console.log(fn(1));
+
+    // 七. 随机验证码
+
+  /*  function getCode() {
+        var  str = "0123456789abc..."// 62  [0-61]
+        var  newStr ="2";
+        var i=0;
+        while(i<4){
+            var num = Math.round(Math.random()*61);
+            if(newStr.indexOf(str[num])===-1){
+                newStr+=str[num];
+                i++;
+            }
+        }
+        box.innerHTML = newStr;
+    }
+    box.onclick =getCode;*/
+
+  // 八.
+    var  ul1 = document.getElementById("ul1");
+    var  oLis = ul1.getElementsByTagName("li");
+    for(var i=0;i<oLis.length;i++){
+        if(i%2===0){// i是偶数，那么是奇数行
+            oLis[i].style.background="red";
+        }else{
+            oLis[i].style.background = "green";
+        }
+        // 循环时执行
+        oLis[i].bg=oLis[i].style.background;// 把li默认的颜色进行存储；存储到当前的li的bg属性上；
+        oLis[i].index = i;// 用来存储当前是第几个li的
+        oLis[i].onmouseover = function () {
+            this.style.background="pink";
+            console.log(i);// 函数执行时，这行代码执行，
+        }
+        oLis[i].onmouseout = function () {
+            this.style.background=this.bg;
+        }//
+        oLis[i].onclick = function () {
+            alert("我是第"+(this.index+1)+"个li");
+        }
+    }
+    function fn(){
+        console.log(100);
+        for(var i=0;i<100;i++){
+        }
+    }
+    fn();
+    // 1. 函数的定义
+    // 2. 函数的核心原理
+    // 3.形参实参
+    // 4.arguments
+    // 5.return;
+    // 6.匿名函数
+
+</script>
+</body>
+</html>

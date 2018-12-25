@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="a">789</div>
+<script>
+    // JS 的组成部分 ：
+    // ECMAScript : 规定了JS基础语法，变量、数据类型、操作语句、函数等
+    // es6 :
+    // DOM : 文档对象模型；
+    // BOM : 浏览器对象模型
+
+    // JS 的引入方式
+    // 1. 行内式   内嵌式  外链式
+
+    // JS 的输出方式
+    // 1. alert
+    // 2. console.log
+    // 3. confirm
+
+    // JS中的变量
+    // 1.由字母、数字、下划线、$组成；
+    // 2.不能以数字开头，严格区分大小写
+    // 3.遵循驼峰命名，第一个单词的首字母小写，其余有意义的单词首字母大写
+    // 4.不能使用关键字和保留字；
+    /*var  a = 19;
+    console.log(a);// 19
+    var  str= 'ahshudspdoishiedwu';*/
+
+
+    // innerHTML innerText
+    // innerHTML 可以识别标签，innerText 不可以识别标签
+    // = : 赋值；
+    var a = document.getElementById("a");
+    a.onclick = function () {
+        a.innerHTML += 123;
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="a"></div>
+<script>
+    var div = document.getElementById("a");
+    console.log(typeof div);
+    div.onclick = function () {
+        div.style.color = "red";
+    }
+    // 基本数据类型 和 引用数据类型；
+    // 基本数据类型和引用数据的根本区别： 基本数据类型是操作值的，引用数据类型操作的空间地址；
+    /*var a =b =c =10;
+    b=100;
+    console.log(a); // 10
+    var  d = e= f = {};
+    e.a = 100;
+    console.log(d);// {a:100}*/
+
+    //var obj = {a:1,b:2,c:"zhufeng",1:100}
+    // 对象的特征：对象由键值对组成，键值对由逗号隔开，键值对由属性名和属性值组成,属性名和属性值用冒号隔开；前面的是属性名，后面的是属性值；
+    // 1. 对象没有length属性；
+    //console.log(obj.length);// undefined；
+    // 2. 获取某个属性名对应的属性值  对象名.属性名
+    //console.log(obj.a);
+    //console.log(obj["a"]);
+    //console.log(obj["1"])
+    // 3. 新增键值对
+    //obj.d="培训";
+    //obj["d"]="培训";
+    //obj.efg = 1;
+    //console.log(obj);
+    //var obj = {a:1,b:2,c:"zhufeng",1:100};
+    // 4.修改键值对;如果没有就是新增，有就是修改；
+    //obj.c = "培训";
+    //obj["c"]="北京";
+    //console.log(obj);
+    // 5. 删除键值对 delete + 对象名.属性名
+    /*delete obj.c;
+    delete obj["c"];
+    console.log(obj);*/
+    //obj.a = 10;
+    //var c = obj.a;
+    // obj.a 如果放在等号的左边，那么是被赋值或修改；放在等号的右边，是在获取值；
+    //console.log(c);
+
+    //6.只要是以值存在的一定是一个具体的数据类型值；
+    // 放在等号的后面或者对象属性名冒号的后面一定是值；
+    var d = 19;
+    var obj = {a:1,b:"zfpx",c:d};
+    console.log(obj);
+    obj.a = 11;
+    obj.a=a;
+
+
+</script>
+</body>
+</html>

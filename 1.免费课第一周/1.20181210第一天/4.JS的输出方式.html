@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="a">你很帅，我也很帅</div>
+<script>
+    // 1. console.log()  在控制台输出；经常用于调试bug;
+    // 2. 如果通过id名获取不到内容，那么获取的结果是null；
+    /*var box = document.getElementById("a");
+    box.style.color="red";*/
+    // 3.alert : 弹出
+    // 1) : 会让代码停止到这一行
+    // 2) : 会把弹出的值转成字符串；默认调用toString方法；
+    //alert(100)
+   /* console.log(box);
+    console.log(100);// 如果控制台是数字，字体颜色是蓝色；
+    console.log("100");*/// 如果是字符串，字体颜色是黑色；
+
+    // 4.confirm : 相对于alert多一个取消按钮;如果点击确定，a代表true，点击取消，代表false；
+    /*var a = confirm("今天12月10号")
+    console.log(a);*/
+    // console.dir()详细输出；
+    var box = document.getElementById("a");
+    console.log(box)
+    console.dir(box);
+    //console.table(): 把json 数据以表格的形式输出；
+
+
+</script>
+</body>
+</html>

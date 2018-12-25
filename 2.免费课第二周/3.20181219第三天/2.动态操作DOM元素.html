@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div id="first"></div>
+    <ul id="ul"></ul>
+</div>
+<script>
+    var  box = document.getElementById("box");
+    var ul = document.getElementById("ul");
+    var first = document.getElementById("first");
+    //box.innerText="珠峰培训十四期"
+    //box.innerHTML="<div></div>"
+    // 1. document.createElement: 创建一个元素
+    //document.createElement(标签名)
+    var  newDiv = document.createElement("div");
+    //newDiv.innerHTML="上课别聊天"
+    //console.log(typeof document.createElement);
+    // 2.appendChild 向容器的末尾添加子节点
+    // 容器.appendChild(元素)
+   // box.appendChild(newDiv)
+    // 3.insertBefore : 向容器中的某个元素前面插入新元素
+    //容器.insertBefore(newChild,oldChild)
+    //box.insertBefore(newDiv,first)
+    // 4. removeChild : 删除子节点
+    // 容器.removeChild(oldChild)
+    //box.removeChild(ul)
+    // 5.replaceChild: 用新的子节点替换老的子节点
+    //容器.replaceChild(newChild,oldChild)
+    //box.replaceChild(newDiv,ul)
+    // 6.cloneNode : 克隆一份同样的元素
+    // cloneNode的参数一个是true，代表深度克隆，将子孙节点也克隆出来
+    // false：如果不传就是false；浅克隆；
+    /*var  divs = box.cloneNode(true);
+    box.appendChild(divs);*/
+    //7.getAttribute : 获取行间属性所对应的属性值；没有获取到是null;
+    // setAttribute : 设置行间属性所对应的属性值 setAttribute(属性名，属性值)
+    // removeAttribute(): 移除行间属性
+    // console.log(box.getAttribute("zf"));
+    //console.log(box.getAttribute("id"));
+    //box.setAttribute("a",100)
+    //box.removeAttribute("zfpx")
+    // 8.classList; add remove  replace
+    //box.className="a"
+    box.classList.add("a")
+    //box.classList.remove("a")
+    box.classList.replace("a","b")// 第一个参数是旧的，后面是新的class
+
+
+
+</script>
+</body>
+</html>

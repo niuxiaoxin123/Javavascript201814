@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = [12,3,66,45,56,33,99,62,89];
+    // 快速排序原理： 获取到数组的中间项，然后让数组中的每一项和中间项进行比较，比中间项小的放到左边的数组，比中间项大的放在右边的数组；再对左边和右边的数组进行同样的处理；当这个数组只有一项或者没有，不需要再次处理；最后把所有的中间项和只有一项的数组连接到一起；
+    function quickSort(ary) {
+        // 判断是否需要继续递归
+        if(ary.length<=1){
+            // 如果数组的长度小于等于1，不需要再次进行递归
+            return ary;
+        }
+        // 获取中间项的索引
+        var middle = Math.floor(ary.length/2);
+        // 删除原有数组中的中间项；
+        var midNum = ary.splice(middle,1)[0];
+        // 循环数组，与中间项进行比较
+        var left = [];
+        var right = [];
+        for(var i=0;i<ary.length;i++){
+            var cur  = ary[i];
+            // 比其中间项小的放左边的数组，比中间项大的放右边的数组；
+            if(cur<midNum){
+                left.push(cur)
+            }else{
+                right.push(cur);
+            }
+        }
+        console.log(left);
+        /*console.log(left);
+        console.log(right);*/
+        //console.log(midNum);//
+        // 把quickSort 的返回值拼接到一起；得到最新的数组；
+        return quickSort(left).concat(midNum,quickSort(right));
+    }
+    console.log(quickSort(a));
+
+</script>
+</body>
+</html>

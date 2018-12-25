@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">1111</div>
+<script>
+    // 第一周 ： 数据类型   操作语句   function
+    // 1. 基本数据类型和引用数据数据
+    var  a =10;
+    var  obj = {a:1}// obj 实际就是一个十六进制的空间地址；
+
+    // number string  boolean   null  undefined;
+    // number :
+    // Number  isNaN   parseInt  parseFloat   toFixed
+    // string :
+    // 1. length  索引  运算
+    // boolean :
+    // 1. true  false   Boolean  !: 取反
+    // null 和 undefined
+    // 1.只声明未定义
+    // 2.获取对象的属性名对应的属性值，属性名不存在，那么属性值是undefined；
+    // 3. 函数的形参没有对应的实参，存储的默认值是undefined
+    // 4. 函数没有return，那么函数的返回值是undefined；
+    /*var  a;
+    var obj = {k:1}*/
+
+    // 对象
+    var  g = {r:12};
+    // 增删改查；
+    // 数组： [];
+    // length  索引；
+
+
+    // 操作语句：
+    // if  else     三元运算符    switch case
+    // 数据类型之间的比较：
+    // ! : 如果放在值的前面，代表是取反，放在等号的前面是不等于；
+    /*if([]!==[]){
+        console.log(2);
+    }else if([]==![]){
+        console.log(3);
+    }else{
+        console.log(4);
+    }*/
+
+    // 三个循环
+    // for   for in   while
+    // for : 四步曲：
+    /*for(var i=0;i<12;i++){
+        break;// 中止整个大循环
+        continue;// 结束本轮循环；
+    }*/
+
+
+    //  函数
+    // 1.定义和执行；
+    // 2.函数的核心原理；堆内存栈内存；
+    // 3. 形参和实参
+    // 4. arguments: 实参的参数集合
+    // 5. return
+    /*var  box = document.getElementById("box");
+    // 点击让函数执行；
+    for(var i=0;i<10;i++){
+        console.log(1);
+        box.onclick = function () {
+              console.log(i);
+        }
+    }
+    console.log(i);*/
+/*    //
+    var obj = {a:1};
+    obj.a=100;
+    obj.a = 100;
+    obj.a = 100;
+    obj.a = 100;
+    obj.a = 100;
+    obj.a = 100;
+    obj.a = 100;
+    console.log(obj.a);// 100*/
+
+
+</script>
+</body>
+</html>

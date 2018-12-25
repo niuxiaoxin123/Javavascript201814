@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数组：引用数据类型；空间类型
+   /* var  a = b  =c = [];
+    console.log(a == b);// true
+    var d = [];
+    var e=[];
+    console.log(d == e);*/// false
+   /* var  a = b = [];
+    b[0]=100;
+    b=[];
+    b[0] =1000;
+    console.log(a);// [100]
+    console.log(b);/*/ //[1000]
+    // 1. length： 代表数组成员的个数
+    // 2. 索引： 代表数组成员的属性名；从0开始；
+
+    // 1.push
+    var  ary = [1,99,2,8,88,99,66];
+    /*console.log(ary.push(66));
+    console.log(ary);*/
+    //console.log(typeof ary.push);// "function"
+    // 2. pop : 删除数组的最后一项
+    /*console.log(ary.pop());;
+    console.log(ary);*/
+
+    // 5. slice : 截取
+   /* console.log(ary.slice(2, 4));
+    console.log(ary.slice(1));
+    console.log(ary.slice());*/
+    //console.log(ary.slice(2, 6));
+    var  ary = [14,950,4,83,73,62,36];
+    // 6.splice : 增   删   修改
+    //ary.splice(2,3)
+    //ary.splice(2,0,45)
+    //var a = ary.splice(0)
+    //console.log(a);
+
+    //7.sort : 排序;
+    //ary.sort()// 只能排相同位数的数组；
+   /* var f = ary.sort(function (a,b) {
+        return a-b;
+    });
+    console.log(ary);
+*/
+
+    // 8.reverse
+    //
+    /*var  a = ary.reverse();
+    console.log(a);
+    console.log(ary);*/
+    // 9.indexOf
+   /* var e = ary.indexOf(101)
+    console.log(e);
+    console.log(ary);*/
+   // 10.lastIndexOf
+    //console.log(ary.lastIndexOf(62));
+    // 11.concat :
+
+  /*  var a = [11,22,33];
+    /!*for (var i = 0; i < a.length; i++) {
+        var obj = a[i];
+        ary.push(obj)
+    }*!/
+    var b = ary.concat();
+    console.log(b);
+    console.log(ary);*/
+  // 12.join
+    /*var  v = ary.join("&");
+    console.log(v);
+    console.log(ary);*/
+    var  ary = [14,950,62,4];
+    // 13.forEach
+    /*var rr = ary.forEach(function (a,b,c) {
+        // a: 数组的每一项
+        // b: 数组成员的索引
+        // c : 要循环的数组；
+        //console.log(a);
+        //console.log(b);
+        console.log(c);
+    })
+    console.log(rr);
+    console.log(ary);*/
+    // 14.map : 遍历，映射
+    var  tt = ary.map(function (p1, p2, p3) {
+        // 参数： param
+        //console.log(p1);
+        //console.log(p2);
+        //console.log(p3);
+        return 66;
+    });
+    console.log(tt);
+    console.log(ary);
+</script>
+</body>
+</html>

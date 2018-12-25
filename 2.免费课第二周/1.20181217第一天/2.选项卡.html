@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #parent{
+            width:400px;
+            height:300px;
+            margin: 100px auto;
+        }
+        #tab{
+            overflow: hidden;
+        }
+        #tab li{
+            list-style: none;
+            float:left;
+            width:60px;
+            height:30px;
+            text-align: center;
+            line-height: 30px;
+            border:1px solid indianred;
+            margin-right:5px;
+        }
+        /*通过class控制元素的选中样式*/
+        #tab li.select{
+            background: indianred;
+            color:white;
+        }
+        #parent div{
+            /*让所有的div隐藏*/
+            display: none;
+            width:400px;
+            height:300px;
+            text-align: center;
+            line-height: 300px;
+            border: 1px solid indianred;
+        }
+        /*控制当前div的显示隐藏*/
+        #parent div.select{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="parent">
+    <ul id="tab">
+        <li class="select">基础课</li>
+        <li >JS课</li>
+        <li>框架高级课</li>
+    </ul>
+    <div class="select">HTML、CSS</div>
+    <div>JAVASCRIPT</div>
+    <div>NODE、VUE、REACT</div>
+</div>
+<script>
+    // 1.获取到操作的元素
+    var parent = document.getElementById("parent");
+    var oLis = parent.getElementsByTagName("li");
+    var oDivs = parent.getElementsByTagName("div");
+    for(var i=0;i<oLis.length;i++){
+        oLis[i].index = i;
+        oLis[i].onmouseover = function () {
+            for(var j=0;j<oLis.length;j++){
+                oLis[j].className="";
+                oDivs[j].className="";
+            }
+            this.className="select";
+            oDivs[this.index].className="select";
+        }
+    }
+    /*oLis[0].onclick = function () {
+
+    }
+    oLis[1].onclick = function () {
+
+    }
+    oLis[2].onclick = function () {
+
+    }*/
+    //2.循环所有的li;给每一个li绑定点击onclick事件；
+    /*for(var i=0;i<oLis.length;i++){
+        console.log(oLis[i]);// {}
+        // 新增键值对
+        oLis[i].index = i;
+        oLis[i].onclick = function () {
+            // this 是一个关键字；在JS中有特殊的意义；
+            //console.log(this);
+            //给当前点击的li新增class是select；
+            // 清空所有的li身上的class；
+            for(var j=0;j<oLis.length;j++){
+                oLis[j].className="";
+                oDivs[j].className="";
+            }
+            // 点击哪个li，在哪个li上新增class；
+            // 点击li,让对应的div新增class；
+            this.className="select";
+            // 此处不可以使用外层的变量i;原因是外层的循环在加载页面时，已经执行完成；外层i已经变成了3；
+            //oLis[0]   ---- this--->  oLis[0]
+            //oLis[1]   ---- this--->  oLis[1]
+            //oLis[2]   ---- this--->  oLis[2]
+            console.dir(this)
+            //this.index : 代表当前点击li的索引；
+            oDivs[this.index].className="select";
+        }
+    }*/
+
+
+
+
+</script>
+</body>
+</html>

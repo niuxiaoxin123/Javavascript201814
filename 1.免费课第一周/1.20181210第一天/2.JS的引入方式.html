@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" onClick="alert(99)">22222</div>
+<script>
+    // 1.所有的JS代码都要写在script标签中；
+    // 2.一个页面中可以放多个script标签；
+    // 3.在JS中把HTML的标签叫做元素；
+    // 4.如果script使用src属性引入其他文件，那么script中写的代码将失效；
+    // 5.script标签不可以进行嵌套；
+    // 6.JS 的引入方式： 内嵌式、外链式、行内式；
+    // 7.JS的引入方式不分优先级，后面的会把前面的覆盖；
+
+    // console.log : 在浏览器的控制台输出；
+    // 代码是从上到下进行加载解析的；
+    //var  a = 100;
+    //console.log(100);
+    // 获取元素
+    var oBox =  document.getElementById("box");
+    // 点击事件；
+    oBox.onclick = function () {
+        // 当点击这个元素时，oBox的样式发生改变；
+        oBox.style.color = "red";
+    }
+    oBox.onclick = function () {
+        // 当点击这个元素时，oBox的样式发生改变；
+        oBox.style.color = "blue";
+    }
+    /*oBox.style.color = "red";
+    console.log(oBox);*/
+    //console.log(10);
+</script>
+<script src="index.js">
+    //console.log(100);
+
+</script>
+<!--<script>
+    console.log(1000);
+</script>-->
+</body>
+</html>

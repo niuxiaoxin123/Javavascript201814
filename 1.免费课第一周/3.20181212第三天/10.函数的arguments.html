@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // arguments : 函数的实参集合；只能在函数体中使用；
+    // 使用场景： 适用于参数较多的情况；
+    // 任意数求和；
+    function sum(){
+        //console.log(arguments);// 不是一个数组；是一个类数组；
+        var total = 0;// 用来接收求和的结果；
+        for(var i=0;i<arguments.length;i++){
+            var cur = Number(arguments[i]);
+            if(!isNaN(cur)){// 有效数字返回false；
+                total+=cur;
+            }
+        }
+        console.log(total);
+    }
+    // 凡是转数字之后是NaN的，都不要；
+    sum(1,101,33,77,"89","99px",[],82)
+
+
+
+</script>
+</body>
+</html>

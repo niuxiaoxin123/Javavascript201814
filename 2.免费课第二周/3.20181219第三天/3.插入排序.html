@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var  ary = [12,8,2,9,12,6,88,67,58,99,36];
+    var  a = [];// [12]
+    // 取到原数组中的一项，放入新的数组中，需要和新数组从后向前依次比较，当前项比新数组中后面一项小，比前面一项大，那么把当前项插入到这个中间；
+    a.push(ary[0]);// [2,8,12]
+    for(var i=1;i<ary.length;i++){
+        var  cur = ary[i];// 获取原有数组的每一项
+        for(var j=a.length-1;j>=0;j--){
+            if(cur<a[j]){
+                // 如果当前项比这一项小，继续j--;和前面的进行比较，如果已经比较到第一项，那么直接放入数组的最前面；
+                if(j===0){
+                    // 说明数组已经比较到第一项
+                    a.unshift(cur);
+                }
+            }else{
+                // 把cur添加到索引j的后面，所以需要j+1;
+                a.splice(j+1,0,cur);
+                break;
+            }
+        }
+    }
+    console.log(a);
+
+
+</script>
+</body>
+</html>

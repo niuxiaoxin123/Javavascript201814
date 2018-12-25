@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.=
+    // 赋值
+    var hh = 10;// 把10赋值给变量hh;
+    // 2. == 比较；返回一个布尔值；相等返回true，不相等返回false
+    // 允许不同数据类型之间的比较；
+    // 如果是不同类型的数据进行，会默认进行数据类型之间的转换；
+    console.log(1 == 1);// true
+    console.log(1 == "1");// true
+    console.log(1 == "1px");//false
+    console.log(1 == true);//true
+    // 如果是对象数据类型的比较，比较的是空间地址
+    console.log({}==[])// false
+    console.log({}=={})// false
+    console.log([]=="")// true
+    console.log([]==0)// true
+
+    console.log([]==false)// true
+    console.log([]==0)// true
+    console.log(100 == false);// false
+    console.log(188 == "188");// true
+    console.log(false == '');// true
+
+    // 数据类型比较规律
+    // 对象--> 先toString转字符串--> 再转数字
+    // 字符串--> 转数字
+    // 布尔--> 数字
+    console.log(null == undefined);// true
+    console.log(NaN == NaN);// false ;NaN 和自己都不相等；
+    console.log({}==0)
+    // {} 调用跑哪个toString 转换成字符串结果是"[object Object]"
+    // 3.=== : 绝对比较; 只要数据类型不一样，那么返回false；
+    console.log(1 === 1);// true
+    console.log(1 === true);// false
+    console.log(1 === "1");// false
+ // 1. 数据类型  操作语句  函数
+</script>
+</body>
+</html>

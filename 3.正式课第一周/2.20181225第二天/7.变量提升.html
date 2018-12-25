@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 变量： 是一个代码执行之前的解析过程；
+    /*console.log(a);// 函数
+    var  a =8;
+    console.log(a);// 8
+    function a() {
+    }
+    a();*///  a  is not  function;
+
+    // es6 : ECMAScript6
+    // let声明变量
+    // 1. let声明变量不进行变量提升
+    // 2. 在同一个作用域let声明的变量不可以重名；
+    console.log(b);
+    var b = 19;
+    var b = 18;
+    // 全局作用域
+    // 私有作用域
+    // 块级作用域 ： if else  for  while ...
+    var  f = {a:1}
+    //let a = 10;
+    //let a = 11;
+    let c=1;
+    if([]){
+        // 在es6中，这是一个块级的作用域；
+        let c =8;
+    }
+    /*function a() {
+        let c = 2;
+    }
+    a()
+    console.log(a);*/
+
+</script>
+</body>
+</html>

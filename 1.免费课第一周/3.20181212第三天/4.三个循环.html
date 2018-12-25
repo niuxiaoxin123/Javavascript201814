@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // JS 是单线程的，同一时间，只能做一件事；
+    // for 循环的四步曲
+    //1. 定义变量i;
+    //2. 判断条件是否成立
+    //3. 执行循环体
+    //4. 执行i++;
+    //执行过程 1-->2-->3-->4-->2-->3-->4-->2...
+    /*for(var i=0;i<30;i++){
+        // 循环体
+        console.log(1);
+    }
+    console.log(2);*/
+
+    // continue : 停止本轮循环
+
+    /*for(var i=0;i<10;i++){
+        if(i<5){
+            continue;// 中止本轮循环，循环体中下面的代码不再执行；
+        }
+        console.log(100);
+    }*/
+
+    // break : 终止整个大循环；
+   /* for(var i=0;i<10;i++){
+        if(i<5){
+            break;
+        }
+        console.log(100);
+    }*/
+   /*for(var i=0;i<11;i++){
+       if(i<5){
+           i++;
+           continue
+       }
+       if(i>8){
+           i+=2;
+           break;
+       }
+       i++;
+   }
+    console.log(i);*/// 12
+
+    for(var i=0;i<12;i++){
+        if(i>6){
+            i+=2;
+            continue;
+        }
+        if(i<4){
+            i++;
+        }
+        i+=2;
+    }
+    var  ary = [1,2,3,88,89,25,667];
+    for(var i=0;i<ary.length;i++){
+        // i: i是数组成员对应的索引；
+        console.log(ary[i]);
+    }
+
+
+</script>
+</body>
+</html>

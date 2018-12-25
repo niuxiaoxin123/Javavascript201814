@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 函数是函数数据类型的，也是引用数据类型的
+    var a = "wc";
+    // function 定义一个函数； 函数名和变量名规则一样；
+    // function : 功能，方法；
+    /*function fn() {
+
+    }
+    var a = 99.666;
+    var b = 36.888;
+    var s = Number((a+b).toFixed(2))+199;
+    console.log(s);
+
+    var c= 99.678;
+    var d = 66.8889;
+    var t = Number((c+d).toFixed(2))+209;
+    console.log(t);*/
+
+    console.log(100);
+    function sum(x,y) {// 形参
+        var s = Number((x+y).toFixed(2));
+        console.log(s)
+    }
+    sum(99.666,36.888);// 实参
+    sum(99.678,66.8889);
+    sum(95,6.8889);
+    // 把实现同一种功能的代码放进一个函数中，当想实现类似的功能时，只需要执行这个函数就可以；减少了代码的冗余；“高内聚，低耦合”；
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // fn是函数名；
+    // 函数的定义
+    // 形参： 函数定义的小括号中传入的参数就是形参
+    // 实参： 函数执行时的小括号中传入的参数就是实参；
+    // 如果函数只有形参，没有实参，那么函数中形参默认的值就是undefined；
+    function fn(a,b) {
+        // 形参和实参是一一对应；第一个实参赋值给第一个形参；
+        console.log(a);// 100
+        console.log(b);// 200
+        console.log(a+b)// NaN  任何数字和undefined运算，结果都是NaN;
+    }
+    fn(100,200);
+
+
+
+</script>
+</body>
+</html>

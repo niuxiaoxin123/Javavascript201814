@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="h">
+<div id="a">
+    <div id="b"></div>
+    <div class="select">1111</div>
+    <div class="select">2222</div>
+    <div name="boss"></div>
+    <p></p>
+</div>
+<input type="text" name="uu">
+<script>
+    // 1.document.getElementById
+    // 1. 通过ID名称获取元素，元素是个对象;元素都是对象数据类型的；
+    // 2. 如果获取不到，获取结果是null
+    // 3. 如果名字相同，只获取第一个
+    // 4. getElementById的上下文只能是document；
+   /* var a = document.getElementById("a");
+    document.getElementById("b")
+    console.log(typeof a);*/
+   /* var a = document.getElementById("a");
+    a.style.color="red";*/
+
+   // 2. document.getElementsByTagName  [{}]
+    // 通过标签名来获取元素；得到是一个元素集合；
+    //getElementsByTagName 方法支持元素作为该方法的上下文；
+    /*var a = document.getElementById("a");
+    var g = a.getElementsByTagName("p");
+    g[0].style.color="red";*/
+
+    // 3.document.getElementsByClassName
+    // 通过class名称获取DOM元素集合；
+    // 结果也是一个复数，如果需要获取具体的某个元素，需要加上索引；
+   /* var a = document.getElementById("a");
+    var f = a.getElementsByClassName("select")[1];
+    f.style.color="red"*/
+
+   // 4.document.getElementsByName : 通过name属性来获取元素集合；一般用于表单元素；
+    //console.log(document.getElementsByName("boss"));
+
+    // 5.document.body : 获取body元素
+    // 6.document.documentElement ： 获取HTML；
+    //console.log(document.getElementById("h"));
+    //console.log(document.body);
+    //console.log(document.documentElement);
+    // 7.querySelector ： 获取的是唯一的；
+    // 如果是id的话，需要加上#;
+    // 如果是class，需要加.;
+    console.log(document.querySelector(".select"));
+    // 8.querySelectorAll   获取所有的
+    console.log(document.querySelectorAll("div"));
+
+</script>
+</body>
+</html><div class="select">1111</div>

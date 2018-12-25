@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. JS 的数据类型
+    // 数据类型基本数据类型和引用数据类型
+    // 基本数据类型： number  string  boolean  null   undefined
+    // 引用数据类型 分为对象数据类型和函数数据类型；
+    // 对象数据类型：对象  数组  正则   Date的实例  Math
+    // 函数数据类型：函数 类
+    // 引用数据类型：对象  数组  正则  函数  Date的实例  Math ...
+
+    var tt = 1882;// number类型的
+    var  a = 1;
+    var str ='abddhc778';//字符串类型
+    var g = true;// false
+    // null   undefined
+    var school = 1;
+    var st = "school";
+    console.log(st);
+    // 对象数据类型
+    var obj = {a:1,b:100};
+    var arr = [12,8,73,89];
+    var reg = /\d/;
+    var t = new Date();// 当前电脑的系统时间；
+    // 函数数据类型
+    function fn(){}
+    // 1.typeof : 用来数据类型检测;返回一个字符串，字符串内容代表当前的数据类型
+    console.log(typeof 1882);// "number"
+    console.log(typeof str);// "string"
+    console.log(typeof true);// "boolean"
+    console.log(typeof null);//"object"
+    console.log(typeof undefined);//"undefined"
+    console.log("100");
+    console.log(typeof obj);// "object"
+    console.log(typeof arr);// "object"
+    console.log(typeof reg);// "object"
+    console.log(typeof fn);// "function"
+    // instanceof  constructor  Object.prototype.toString.call()
+
+
+</script>
+</body>
+</html>

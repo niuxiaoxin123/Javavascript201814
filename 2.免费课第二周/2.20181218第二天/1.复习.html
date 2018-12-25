@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 数组的方法
+    // push
+    // pop
+    // shift :
+    // unshift
+    // slice
+    // splice
+    // sort(function(a,b){return a-b})
+    // reverse
+    // join
+    // concat
+    // indexOf
+    // lastIndexOf
+    // map
+    // forEach
+
+    // find   filter  every  reduce  ...
+
+    var  ary = [12,3,4,6];
+    //ary.push(12,19,17)
+    // slice(m,n): 截取
+    // splice(m,n,18,278)
+    // splice(m,0,18,278)
+    //ary.splice(2,0,123,345)
+    //console.log(ary);// [12,3,123,345,4,6]
+
+    // sort
+   /* ary.sort(function (a,b) {
+        return a-b;// 从小到大
+        return b-a;// 从大到小
+    })*/
+   // reverse : 倒序排
+    // indexOf : 检测数组成员在数组中第一次出现的索引位置；
+    // lastIndexOf : 检测数组成员在数组中最后一次出现的索引位置；如果不存在，返回-1；
+    // join : 把数组按照特定的字符连接成一个字符串
+    //console.log(ary.join("-"));
+    // concat : 数组的拼接
+    // map
+    // forEach
+    ary.forEach(function (p1, p2, p3) {
+        // p1: 数组每一项
+        // p2 : 数组的索引
+        // p3 : 循环的数组
+    })
+
+    // 函数和对象；
+    // 1. indexOf
+    // 2. 对象，循环对象，放到新的数组中；
+    // 3. 操作原有的数组
+    var arr = [12,3,12,4,6,8,88,8,88,6];
+    var  obj = {};// 对象的属性名不能重复；
+    for(var i=0;i<arr.length;i++){
+        var cur = ary[i];
+        if(obj[cur]===cur){
+            // 如果条件成立，此处是重复项
+            ary[i] = ary[ary.length-1];
+            ary.length--;
+            i--;
+            continue;
+        }
+        obj[cur] = cur;
+    }
+
+    // 先对数组进行排序；
+    // 判断相邻两项是否相等，如果相等说明此项是重复项，删掉；
+
+
+
+
+
+</script>
+</body>
+</html>

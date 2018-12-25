@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">123</div>
+<script>
+    // innerHTML : 改变元素中的内容;而且识别标签；
+    // 1. 获取元素
+    var a = document.getElementById("box");
+    // 2. 给这个元素绑定点击事件；
+    console.log(1);
+    a.onclick = function () {
+        // 点击时，此处的代码才运行；
+        a.innerText="<a href='http://www.baidu.com'>456</a>";
+    }
+
+    // innerText:不能识别标签；
+    //"<a href='http://www.baidu.com'>456</a>"
+
+   // 预习视频：10---22；
+</script>
+</body>
+</html>

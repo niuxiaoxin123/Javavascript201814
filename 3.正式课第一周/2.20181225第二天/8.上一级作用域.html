@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 当获取变量对应值时，如果当前作用域不存在，需要向上一级作用域查找；
+    /*var  a = 100;
+    function fn() {
+        console.log(a)// undefined
+        var a = 1;
+    }
+    fn();*/
+
+
+    /*var  a = 100;
+    function fn(a) {
+        //形参是私有变量
+        console.log(a)// undefined
+    }
+    fn();*/
+    var  total = 100;
+    function fn() {
+        var total = 1;
+        return function(){
+            console.log(total);
+            var  total=0;
+            //1 向上一级作用域查找；上一级作用域是fn执行形成的私有作用域；
+        }
+    }
+    var f = fn();
+    f();
+    //函数的上一级作用域跟函数在哪执行没有关系，跟函数在哪定义有关，函数在哪个作用域下定义，上一级作用域就是谁；
+    // 作用域链： 当获取变量值时，首先会看自己私有作用域有没有，如果没有，需要向上一级作用域查找，如果上一级 也没有，需要再向上一级查找，指导找到全局作用域为止，如果全局作用域也没有，那就报错，这样一级一级向上查找形成一条作用域链；
+
+</script>
+</body>
+</html>

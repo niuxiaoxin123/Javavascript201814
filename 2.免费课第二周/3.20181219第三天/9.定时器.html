@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.setTimeout 和setInterval
+    // 2. 定时器返回值
+    // 3.清除定时器
+
+    /*function fn() {
+        console.log(5);
+    }
+    fn();*/
+    // 定时器分为两种
+    // setTimeout : 经过2000毫秒之后执行这个函数；
+    /*var  a = setTimeout(function () {
+        console.log(188);
+
+    },2000);*/
+    /*var  c = setTimeout(function () {
+
+    },3000)*/
+    //console.log(99);
+    // setInterval： 每隔一段时间执行一次函数；
+   /*var b = setInterval(function () {
+    console.log("努力")
+    },1000);
+    // 定时器的函数返回值代表当前定时器在当前页面中是第几个定时器
+    console.log(a);
+    console.log(c);
+    console.log(b);*/
+    //var  i=0;
+    var b = setInterval(function () {
+        //i++;
+        console.log("努力")
+        /*console.log("努力")
+        if(i===5){
+            clearInterval(b)
+        }*/
+    },1000);
+    setTimeout(function () {
+        clearInterval(b);
+    },5000)
+    // 清除定时器
+    //clearTimeout(a);
+    // 努力每隔一秒输出一次；输出十次之后，不再输出；
+    //clearInterval(b)
+
+
+
+</script>
+</body>
+</html>

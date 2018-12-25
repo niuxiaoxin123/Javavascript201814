@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // return: 函数的出口；
+    // 1. 把函数体内部的值return到函数体外面
+    // 2. return 终止函数的执行；return下面的代码都不再执行；
+    // 3.如果没有return出内容，或者函数中没有return，那么函数默认返回都是undefined；
+
+    function sum(){
+        // 在函数体中定义的变量都是私有变量；函数体外面不能访问这个变量的值；
+        //console.log(200);
+        var total = 0;
+       /* return;
+        console.log(199);*/
+        for(var i=0;i<arguments.length;i++){
+            var cur = Number(arguments[i]);
+            if(!isNaN(cur)){
+                total+=cur;
+            }
+        }
+        //return;
+    }
+    // 只要函数执行，就会有一个返回值；函数的返回值是return出来的值；
+    var s = sum(1,101,33,77,"89","99px",[],82);
+    console.log(s);
+   /* console.log(s);
+    var  a = 100;
+    console.log(a);// *///100
+
+
+</script>
+</body>
+</html>

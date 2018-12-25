@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Math 是一个对象数据类型的；
+    // 在Math下有很多方法
+    //console.log(Math);
+    //console.log(typeof Math);
+    //1. Math.abs(): 取绝对值
+    console.log(Math.abs(3));
+    //2. Math.floor(): 向下取整
+    console.log(Math.floor(4.9999));// 4
+    console.log(Math.floor(-4.9999));// -5
+    //3.Math.ceil()向上取整
+    console.log(Math.ceil(4.000001));// 5
+    //4.Math.max() 获取一组数的最大值
+    console.log(Math.max(12, 3, 22, 56, 5, 7, 8));// 56
+    //5.Math.min() 获取一组数的最小值
+    console.log(Math.min(12, 3, 22, 56, 5, 7, 8));// 3
+    //6.Math.random() 产生一个[0,1)的随机小数
+    console.log(Math.random());
+    // 7.Math.round() :四舍五入
+    console.log(Math.round(4.888908));
+    // 8. 产生一个m-n之间的随机整数
+    // Math.round(Math.random()*(n-m)+m)
+    console.log(Math.round(Math.random() * (90 - 60) + 60));
+    //9.Math.pow(m,n);获取m的n次幂；
+    console.log(Math.pow(4, 4));
+    // 10.Math.sqrt : 开平方
+    console.log(Math.sqrt(16));
+</script>
+</body>
+</html>

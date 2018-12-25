@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #code{
+            width:200px;
+            height:60px;
+            margin:50px auto;
+            border: 3px solid orangered;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 60px;
+            color:orangered;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<div id="code"></div>
+<script>
+    //1.要操作谁，就要先获取谁
+    var code = document.getElementById("code");
+    var  str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    // 产生随机的验证码，并且把验证码放入code元素中；
+    function getCode() {
+        // 需要产生四个【0-61】的索引；
+        console.log(100);
+        var newStr = "";
+        var i=0;
+        while(i<4){
+            // 循环四次,产生【0-61】的索引
+            var index = Math.round(Math.random()*61);
+            if(newStr.toUpperCase().indexOf(str[index].toUpperCase())===-1){
+                // 如果判断新字符中不存在这个字符，那么把这个字符拼接上去；
+                newStr+=str[index];
+                i++;// 只有拼接之后，才++;
+            }
+        }
+        code.innerHTML = newStr;
+    }
+    getCode();
+    // 2.给元素绑定点击事件；点击时产生一个随机的索引，通过索引获取对应的字符串；
+    code.onclick = getCode;
+</script>
+</body>
+</html>

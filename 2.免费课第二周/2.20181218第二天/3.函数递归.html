@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 函数分为定义，执行
+    // 1.开辟一个堆内存
+    // 2.把函数体中的代码当做字符串存储到堆内存中；
+    // 3.把函数的空间地址赋值给函数名；
+
+    // 1.开辟一个私有作用域
+    // 2.形参赋值
+    // 3.变量提升
+    // 4.代码从上到下运行
+    // 5.作用域是否销毁
+    /*function  fn(){
+        console.log(1);
+        fn();
+    }
+    fn();*/
+
+    // 递归： 针对函数；在函数内部调用函数本身，让其执行；这种现象就是函数的递归；
+
+    // 求1-100 之间是3倍数的和；
+    // % : 取模；取余数
+    /*var  total =0;
+    for(var i=0;i<101;i++){
+        if(i%3===0){
+            total+=i;
+        }
+    }
+    console.log(total);*/
+
+    // 用递归实现1-100之间3倍数求和
+
+    function sum(num) {
+        // 条件中止
+        // num = 100;  return   99+96+93+...+3+0;
+        // num=99   return 99+sum(98)
+        // num=98    return 99+sum(97)
+        // num=97   return 99+ sum(96)
+        // num =96   return 99+96+sum(95)
+        //....
+        // num = 3   return 99+96+93...+3 + sum(2)
+        // num = 2   return 99+96+93...+3 + sum(1)
+        // num = 1   return 99+96+93...+3 + sum(0)
+        // num = 0   return 99+96+93...+3 + 0
+        if(num<=0){
+            return num;
+        }
+        if(num%3===0){
+            // 如果成立，说明是3的倍数
+            return num + sum(num-1);
+        }else{
+            // 如果不是3的倍数，继续执行下一个；
+             return sum(num-1);
+        }
+    }
+    console.log(sum(100));// 99+96+...+0
+
+
+    function f() {
+        return 1000
+    }
+    console.log(1+f());//  1000;
+</script>
+</body>
+</html>

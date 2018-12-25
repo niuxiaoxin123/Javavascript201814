@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // for 循环数组
+    /*var arr = [1,2,3,4,"yy"];
+    for(var i=0;i<arr.length;i++){
+
+    }*/
+    // for  in
+    //var  obj = {a:1,b:3,str:"www",1:2,5:0,3:8};
+    var  arr = [1,2,5,7,9]
+    for(var key  in  arr){
+        // key : 代表属性名，而且是个字符串；
+        // console.log(key);
+        // obj[key] 代表属性名对应的属性值；
+        // 会把属性名是数字先输出；
+        // 输出循序会根据属性名进行排序，从小到大依次输出；
+        console.log(arr[key]);
+        //break;// 中止循环
+    }
+
+
+
+</script>
+</body>
+</html>

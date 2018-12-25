@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="a">1223</div>
+<script>
+    var  divs = document.getElementById("a");
+    divs.onclick = function () {
+        divs.style.color="red"
+    }
+    //console.log(divs);//
+    // null 和 undefined;
+    // typeof  null --> "object";
+    // typeof undefined ---> "undefined"
+    // null 和 undefined都表示没有；
+    // null表示现在没有，以后可能会有；undefined表示现在没有，以后也不可能有；
+    // null 表示空对象指针；
+    // null :
+    // 1. 通过id获取元素如果获取不到内容，那么默认返回值是null；
+    // 2. 如果需要销毁对象的堆内存，那么给对象赋值为null；
+    // 3. 正则进行捕获，捕获不到内容，那么返回值是null；
+
+    // undefined
+    // 1. 如果变量只声明，没有赋值，那么默认存储的值就是undefined；
+    // 2. 如果获取对象的属性名对应的属性值，如果属性名不存在，获取的值是undefined；
+    //3. 如果函数的形参没有对应的实参，那么形参默认存储的值是undefined
+    //4. 如果函数没有return，那么默认的返回值也是undefined；
+    /*var  obj = {a:1};
+    obj = null;
+    var  c;
+    console.log(c);*/
+
+
+</script>
+</body>
+</html>

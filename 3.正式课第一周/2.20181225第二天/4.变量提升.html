@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 在JS中只要遇到报错，代码立即停止，不再向下执行；
+    // 1.形成全局作用域---> 2.先变量提升---> 3.代码从上到下执行；
+    // 1.变量提升： 在当前作用域下，代码执行之前，把当前作用域下带var和function的要进行提前声明（通知当前作用域有这么一个变量），带var只声明，不定义，function不仅声明而且还要定义（赋值）；
+    // 如果变量只声明，未定义，默认存储值是undefined；
+    console.log(a);// undefined
+    var  a= 19;
+    console.log(a);// 19
+
+    /*console.log(b);
+    b = 10;
+    console.log(b);*/// 10
+    //console.log(c);
+    console.log(gg);// 整个函数
+    //函数在变量提升阶段开辟了堆内存；并且对函数赋予了堆内存的空间地址；
+    // 当代码从上到下执行到23行，遇到函数，直接跳过，什么也不做；
+    gg();
+    function gg() {// gg :
+        var t = 0;
+    }
+    console.log(gg);
+
+
+    // 私有作用域下的变量提升
+    function yy() {
+        var r = 1;
+        function t() {
+        }
+        t();
+    }
+    yy();
+
+    function ww(a,b) {
+        // 1. 形参赋值--  a=1;
+        // 2. a = xxxfff000
+        console.log(a);
+        function a() {
+            
+        }
+    }
+    ww(1,2)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var  str ="zhufengpeixun2018";//
+    // 1. 有length   2.索引   3.字符串运算
+    // + 是字符串拼接，其余都是先转number再运算；
+    //console.log("3px" - "3");
+    // 1.toUpperCase : 把小写字母变成大写
+    //console.log(str.toUpperCase());// 'ZHUFENGPEIXUN2018'
+    //console.log(str);// 原字符串不变；
+    // 2. toLowerCase : 把大写转小写
+    // console.log(str.toLowerCase());
+    // 3. charAt : 通过索引获取对应的字符
+    //console.log(str[3]);
+    // 4.charCodeAt : 获取对应的字符的Unicode编码值；
+    //console.log(str.charCodeAt(3));
+    // 97-122  a-z  65-90 A-Z
+    // 5.substr(m,n) : 字符串截取;从索引m开始，截取n个;如果只有一个参数，截取到末尾
+    //console.log(str.substr(2));
+    // 6.substring(m,n);从索引m开始，截取到索引n;但不包含n;
+    //console.log(str.substring(2, -5));
+    // 7.slice(m,n);从索引m开始，截取到索引n;但不包含n;slice 支持负数传参；
+    //console.log(str.slice(2, -5))
+    //8.replace : 替换replace(old,new);用新字符串替换旧字符串
+    // console.log(str.replace("e", "a"));
+    var  str ="  zhufeng peixun 2018  ";
+    //9.indexOf  : 检测字符串第一次出现的索引位置，如果不存在，返回-1；
+    //console.log(str.indexOf("h"));
+    //10. lastIndexOf:检测字符串最后一次出现的索引位置，如果不存在，返回-1；
+    //console.log(str.lastIndexOf("e"));
+    //console.log(str.lastIndexOf("w"));
+
+    // 11.split: 按照特定的字符分隔成数组中的每一项；
+    //console.log(str.split(" "));
+    // 12.concat : 字符串拼接；
+    //console.log(str.concat("aaaa"));
+    // 13.trim :去字符串的左右空格
+    // trimLeft() 去掉字符串左边的空格
+    // trimRight() 去掉字符串右边的空格
+    console.log(str.trimLeft());
+    console.log(str.length);
+
+
+</script>
+</body>
+</html>

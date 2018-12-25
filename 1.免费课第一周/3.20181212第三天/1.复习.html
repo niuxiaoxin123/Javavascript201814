@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数据类型
+    // 基本数据类型和引用数据类型
+    // 基本数据类型： number  string  boolean  null  undefined
+    // 引用数据类型： 对象数据类型和函数数据类型
+    // 对象数据类型： 对象{}  数组[]  正则  Math  Date的实例...
+    // 函数数据类型： 函数 类；
+    // 基本和引用： 基本数据类型操作是值；引用数据类型操作的是空间地址
+    // 基本数据类型存储到栈内存中；引用数据类型都存储到堆内存中；
+    var  num = 100;
+    var  obj = {};// obj 存储的是一个空间地址；
+    var  arr = [];
+
+    // 数据类型number
+    // Number
+    // isNaN : 校验是否是一个非有效数字；
+    // parseInt
+    // parseFloat :多识别一位小数点
+    // toFixed  ： 保留小数点位数；
+    var  a = Number("18")
+    // string
+    // length  索引  "" '';
+    // 字符串的运算 - *  /
+    // + : 字符串的拼接
+
+    // boolean : true false
+    // Boolean :
+    // 0 "" NaN null  undefined只有这五个值转布尔是false；
+    // ! : 先把后面的值转成布尔，再取反
+    // 数据类型比较
+    // 对象 ==布尔：  对象先转字符串再转数字，布尔转数字；
+    // 对象==对象：   比较是空间地址；
+    // 对象==数字     对象先转字符串，再转数字
+    // 对象==布尔：    对象先转字符串，再转数字，布尔转数字
+    // 对象==字符串 ： 对象转字符串，字符串比较
+    // 布尔==字符串 ： 布尔转数字，字符串转数字
+    // 布尔==数字：    布尔转数字
+    // 字符串==数字：  字符串转数字
+    console.log(![] == [])// true
+    console.log([]==[])// false
+    console.log(![]==false);//true
+    console.log({a:1}=="[object Object]")// true
+    console.log("12px" == 12);
+    // ! : 会先把后面的值进行去布尔，然后再取反，最后比较
+
+    // null  undefined： 都表示没有
+    var obj = {a:1};
+    //obj=null;
+    var  a;
+    console.log(a);
+    console.log(obj.b);// undefined
+
+    // 对象：
+    // 1. 没有length
+    // 2. 键值对组成
+    // 3. 增 删 改 查；
+    // 对象.属性名=属性值
+    var o={a:300}
+    o.a=100;
+    o["a"]=100;
+    console.log(o);
+
+    delete o.a;
+    delete o["a"];
+
+    o.a =600;
+    o["a"] =600;
+
+    var h = o.a;
+    var h = o["a"];
+    // 获取值；
+    console.log(o.a == 600);
+    console.log(o.a );
+
+    //数组 ：
+    // 1. 有length  2.有索引
+
+
+
+
+</script>
+</body>
+</html>

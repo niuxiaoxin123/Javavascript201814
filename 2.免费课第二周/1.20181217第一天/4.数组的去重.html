@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 数组去重：去掉数组中相同的项
+    //var  ary = [12,3,12,5,66,12,66,88,5];
+   /* var newAry = [];
+    for(var i=0;i<ary.length;i++){
+        // 如果当前项在newAry中已经存在，那么不再向里push；
+        // indexOf
+        // 如果ary[i]不存在，那么返回-1；则向新数组中push；
+        // i=0   []     12  [12]
+        // i=1   [12]   3   [12,3]
+        // i=2   [12,3]  12  [12,3]
+        // i=3   [12,3]  5  [12,3,5]
+        //...
+        if(newAry.indexOf(ary[i])===-1){
+            newAry.push(ary[i]);
+        }
+    }
+    console.log(newAry);*/
+
+   // 2. 对象的属性名不能重复
+   /* var  ary = [12,3,12,5,66,12,66,88,5];
+    var obj = {};
+    for(var i=0;i<ary.length;i++){
+        var  cur = ary[i];
+        // i =0 12   obj[12] = 12  {12:12}
+        // i=1  3   obj[3] = 3  {12:12,3:3}
+        // i=2  12  obj[12] = 12
+        obj[cur]=cur;
+    }
+    console.log(obj);//{12:12,3:3,5:5,66:66,88:88}
+    var newAry = [];
+    for(var key in obj){
+        newAry.push(obj[key]);
+    }
+    console.log(newAry);*/
+    /*var  obj = {name:"zfpx",age:10};
+     obj["age"] = 10;
+     console.log(obj);*/
+
+   // 3.对象的属性名不能重复，在原有的数组上删除重复项，实现去重；
+    var  ary = [12,3,5,5,66,12,66,88,5];
+    var  obj = {};// {12:12,3:3}
+    for(var i=0;i<ary.length;i++){
+       var cur = ary[i];// 每循环一次，把当前项给了变量cur;
+        // i=0;  cur: 12 obj :{}    obj[12]:undefined
+        // i=1   cur: 3  obj :{12:12}  obj[3]: undefined
+        // i=2    cur :12 obj:{12:12,3:3}  obj[12]: 12
+        if(obj[cur]===cur){// 条件一旦成立，说明此项是重复项
+            //ary.splice(i,1);// 数组塌陷：当删除数组其中一项时，后面项的索引都要进行重新计算；很耗性能；
+            ary[i]=ary[ary.length-1];// 用数组最后一项覆盖当前项；
+            ary.length--;
+            i--;// 由于删除数组一项之后，所有项向前移动；需要对索引为i的这一项继续判断
+            continue;// 结束本轮循环；
+        }
+        // 给obj新增键值对；
+        obj[cur] = cur;  // obj[12]=12;
+    }
+    console.log(ary);
+
+    var  ary = [12,3,12,5,66,12,66,88,5];
+    var  obj = {};
+    for(var i=0;i<ary.length;i++){
+        var cur = ary[i];
+        if(obj[cur]===cur){
+            //cur=ary[ary.length-1];
+            ary[i]=ary[ary.length-1];
+            ary.length--;
+            i--;
+            continue;
+        }
+        obj[cur] = cur;
+    }
+    console.log(ary);
+
+    // Set
+    var  obj = {a:1};
+    var c = obj.a;
+    c=100;
+    obj.a =100;
+    console.log(obj);// {a:1}
+
+
+</script>
+</body>
+</html>

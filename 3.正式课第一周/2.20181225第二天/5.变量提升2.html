@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 形成全局作用域---> 变量提升（var、function）--> 代码从上到下执行
+    /*console.log(f);// undefined
+    console.log(fn);// 整个函数
+    var  f = 10;*/
+    // 当代码真正从上到下运行时，遇到函数的定义直接跳过；
+    function fn(m,n) {
+        console.log(m);// 输出函数；
+        function m() {
+
+        }
+    }
+    fn(1,2);// 会立即形成私有作用域
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
