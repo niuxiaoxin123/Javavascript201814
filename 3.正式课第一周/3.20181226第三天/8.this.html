@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var oBox = document.getElementById("box");
+    // this --> 关键字 ； 在JS中有特定的意义；
+    // 1. this : 函数执行主体；谁让这个函数执行的；
+    // 1. 全局作用域下的this指向window；和window是同一个空间地址；
+    /*console.log(this);
+    console.log(window);
+    this.a = 1;*/
+    // 2.如果给元素的事件行为绑定函数，那么函数中的this指向当前被绑定的那个元素；
+   /* oBox.onclick = function () {
+        console.log(this);// this--> oBox
+    }*/
+   // 3.函数中的this,要看函数执行前有没有".",有"."的话，点前面是谁，this就指向谁，如果没有点，那么会指向window；
+    /*function fn() {
+        console.log(this);//
+    }
+    fn()*/
+    /*var  obj = {
+        num:1,
+        f:function () {
+            console.log(this);
+        }
+    }
+    obj.f();
+    var fn = obj.f;
+    fn();*/
+
+    // 4.自执行函数中的this永远指向window；
+   /* (function () {
+        console.log(this);
+    })();
+
+    var num = 1;
+    var obj = {
+        fn:(function(){
+           window.num = 6;
+        })()
+    }
+    console.log(num);*/
+   /* var num =2;
+    var obj = {
+        num:1,
+        fn:function () {
+            // this--->obj
+            (function(num){
+                console.log(num);
+            })(this.num)
+            // this 不是自执行函数的this，是function执行的作用域中的this；this---> obj;
+        }
+    }
+    obj.fn();*/
+
+   //5. 定时器中函数的this指向window；
+   /* setTimeout(function () {
+        console.log(this);//window
+    },2000);*/
+
+   // 6.构造函数中的this指向当前的实例
+    //7.call、apply、bind可以改变函数的this指向；
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var  a =6;
+    console.log(a++);// 先输出，后运算；
+    console.log(a);*/
+
+    /*var a = 5;
+    console.log(++a);// 运算之后再输出；
+    console.log(a);*/
+
+
+  /*  function fn() {
+        var i=8;// 9
+        return function (n) {
+            console.log(n+i++)// 13
+        }
+    }
+    var f = fn();
+    f(5);// 13
+    f(6);// 15
+    fn()(7);// 15
+    fn()(8);// 16*/
+
+
+    /*var  a = 18;
+    function w(){
+        a =100;
+        var a = 1;
+    }
+    w();
+    console.log(a);/*/// 100
+
+   /* var num = 1;// 2
+    var  obj = {
+        //这不是一个作用域；
+        num : 10,
+        // fn的属性值是自执行函数的返回值；
+        fn : (function () {
+            // 自执行函数的上一级作用域是全局作用域
+            // 当代码解析到这一行时；
+            // 在执行自执行函数时，obj没有空间地址；
+            // 当obj以键值对存储时，obj现在没有空间地址，执行了这个自执行函数；
+               return function(n){
+                   console.log(n+(++num))
+               }
+            })()// obj --> undefined
+    }
+    var f = obj.fn;
+    f(10);// 12
+    f(20);// 23
+    obj.fn(30);// 34
+    obj.fn(40);// 45
+
+    var  obj = {
+        a:1,
+        b:2
+    }
+    console.log(obj);*/
+
+  /* var obj  = {
+       num:10,
+       fn:(function () {
+           // 此处的函数
+           var num=1;// 2  3 4 45
+           return function (n) {
+              console.log(n+(++num))
+           }
+       })()
+   }
+    console.log(obj);
+    var f = obj.fn;
+    f(10);// 12
+    f(20);// 23
+    obj.fn(30);// 34
+    obj.fn(40);
+*/
+  function fn(n) {
+      return function (m) {
+          console.log(m+n++)
+      }
+  }
+  var f = fn(5);
+  f(6)//11
+  f(7);// 13
+  fn()(10);// NaN
+  fn(8)(9)// 17
+
+</script>
+</body>
+</html>

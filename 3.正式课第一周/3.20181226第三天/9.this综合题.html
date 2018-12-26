@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var num =2;// 1  2
+    var obj = {
+        num : 0,
+        fn : function () {
+            num = 1;// 覆盖了全局作用域的num为1；
+            // this-->obj
+            (function (num) {// num=0
+                ++this.num;
+                num++;
+                console.log(num)// 1
+            })(this.num)
+        }
+    }
+    obj.fn();
+    console.log(window.num,obj.num); // 2  0
+
+
+    var num =1;
+    var obj = {
+        num : 2,
+        fn : (function () {
+            this.num *= 2;
+            num +=3;
+            var num =1;
+            return function () {
+                num +=2;
+                this.num +=2
+                console.log(++num)
+            }
+        })()
+    };
+    var f= obj.fn;
+    f();
+    obj.fn();
+    console.log(window.num,obj.num)
+
+</script>
+</body>
+</html>

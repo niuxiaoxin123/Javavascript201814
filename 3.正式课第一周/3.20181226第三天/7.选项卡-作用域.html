@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #parent{
+            width:400px;
+            height:300px;
+            margin: 100px auto;
+        }
+        #tab{
+            overflow: hidden;
+        }
+        #tab li{
+            list-style: none;
+            float:left;
+            width:60px;
+            height:30px;
+            text-align: center;
+            line-height: 30px;
+            border:1px solid indianred;
+            margin-right:5px;
+        }
+        /*通过class控制元素的选中样式*/
+        #tab li.select{
+            background: indianred;
+            color:white;
+        }
+        #parent div{
+            /*让所有的div隐藏*/
+            display: none;
+            width:400px;
+            height:300px;
+            text-align: center;
+            line-height: 300px;
+            border: 1px solid indianred;
+        }
+        #parent div.select{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <ul id="tab">
+        <li class="select">基础课</li>
+        <li >JS课</li>
+        <li>框架高级课</li>
+    </ul>
+    <div class="select">HTML、CSS</div>
+    <div>JAVASCRIPT</div>
+    <div>NODE、VUE、REACT</div>
+</div>
+<script>
+    // 1.获取到操作的元素
+    var parent = document.getElementById("parent");
+    var oLis = parent.getElementsByTagName("li");
+    var oDivs = parent.getElementsByTagName("div");
+    for(var i=0;i<oLis.length;i++){
+        //1. 自定义属性
+        //oLis[i].index = i;
+        /*oLis[i].onclick = function () {
+            console.log(i);
+            for(var j=0;j<oLis.length;j++){
+                oLis[j].className="";
+                oDivs[j].className="";
+            }
+            this.className="select";
+            oDivs[this.index].className="select";
+        }*/
+        // 2. 闭包
+        // 由于当前自执行函数形成的栈内存不销毁，起到了保存的作用；
+        oLis[i].onclick = (function (a) {
+            // a  0
+            // a  1
+            // a  2
+            return function () {
+                for(var j=0;j<oLis.length;j++){
+                    oLis[j].className="";
+                    oDivs[j].className="";
+                }
+                this.className="select";
+                oDivs[a].className="select";
+            }
+        })(i);
+    }
+
+</script>
+</body>
+</html>

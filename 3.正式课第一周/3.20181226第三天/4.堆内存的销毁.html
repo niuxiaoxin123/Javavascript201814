@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //堆内存的回收；
+    /*var  obj = a ={};// aabb
+    // obj 占用着这个空间地址；
+    obj = {};// bbcc*/
+    /*var a = {};
+    for(var key in a){
+
+    }
+    a=null;*/
+    // 谷歌浏览器： 每隔一段时间会对引用类型的空间地址进行检测，检测当前地址有没有被占用；如果没有占用，那么将其回收；如果占用，不能回收；
+    var obj =a= {};
+    obj = null;
+    a=null;
+    // 火狐和IE
+    // 采用了计数的规则，当前的引用地址被变量占用一次，就会+1；如果不再占用，就会-1；如果当前地址被占用次数为0；那么浏览器将其立即回收；
+   function fn() {
+      a.v = 10;
+   }
+   fn()
+</script>
+</body>
+</html>

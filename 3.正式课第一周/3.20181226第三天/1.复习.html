@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1. 变量提升  作用域
+    // 变量提升：在当前作用域下，在代码执行之前，会对带var和function的进行提前的声明，带var只声明，不定义，带function不仅声明，而且还定义；
+    // 形成作用域---> 变量提升--> 从上到下执行
+    // 1. 变量提升的特殊情况[解析规则]
+    //  1): 不管条件是否成立，都要进行变量提升；
+    //     新版本浏览器，function只声明不定义
+    //     老版本浏览器，function不声明而且定义
+    //  2):变量提升只发生等号的左边
+    //  3): return下面要进行变量提升，后面不需要变量提升
+    //  4): 变量名重复，不再重复声明，但是要重新定义
+    //  5)： 匿名函数的定义和执行一起进行；
+    /*console.log(b);
+    console.log(a);// undefined
+    var  a = 100;
+    function fn() {
+        // 私有作用域
+        var r= 9;
+    }*/
+    function f() {
+
+    }
+    f();
+    console.log(fn);// undefined
+    if(isNaN(NaN)){
+        // 只要进入块级作用域，代码运行之前，会对function开辟堆内存；
+        console.log(fn);// 函数
+        var r = 1;
+        function fn() {
+        }
+    }
+
+
+    // 作用域 : 提供运行环境；
+    // 全局作用域： window
+    // 私有作用域 : 函数执行
+    // 块级作用域 ： if   while  for   switch ...
+
+    // 私有变量：
+    // 1. 形参
+    // 2. 在私有作用域定义的变量或函数；
+    // 上一级作用域
+    // 函数的上一级作用域跟函数在哪执行没关，函数在哪定义，上一级作用域就是谁；
+    /*var  a=0;
+    function gg(a) {
+        console.log(a)// 0
+        //var  a = 1;
+    }
+    gg(a)*/
+    /*var t = 9;
+    function s() {
+        var t = 1;
+        //
+        return function () {
+            console.log(t);
+        }
+    }
+    var f = s();
+    f();
+*/
+
+</script>
+</body>
+</html>
