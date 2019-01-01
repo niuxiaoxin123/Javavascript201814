@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 单例模式
+    /*var obj = {fn:function () {},num:function () {}}
+    var obj1 = {}*/
+   // 高级单例模式
+    var  utils = (function () {
+        var n =100;
+        function fn() {
+            console.log(n);
+        }
+        function num() {
+            fn();
+        }
+        return {fn:fn}
+    })()
+    utils.fn();
+
+    // 2.工厂模式
+    // 函数： 高内聚，低耦合，减少代码冗余---> 封装；
+    function sum() {
+    }
+    sum();
+    sum();
+    box.style.display="none";
+    $("#a");
+
+
+
+
+</script>
+</body>
+</html>

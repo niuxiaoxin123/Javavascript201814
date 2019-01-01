@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+      function Fn() {
+          this.x = 10;
+          this.y=20;
+          /*this.getX = function () {
+              console.log(this);
+              console.log(this.x);
+          }*/
+      }
+      Fn.prototype.getX =function () {
+          console.log(this);
+          //console.log(this.x);
+      }
+      var f = new Fn;
+      //f.getX();// 看函数执行前有没有点，点前面是谁，那么this就是谁；
+      Fn.prototype.getX();// this---> Fn.prototype
+      f.__proto__.getX();// this--> f.__proto__
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fn(m,n) {
+        this.x = m;
+        this.y = n;
+        this.getX = function () {
+            console.log(this.x);
+        }
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.x);
+    }
+    var  f = new Fn(100,200);//{x:100,y:200,getX:f}
+    f.getX()
+    console.log(f.getX === f.__proto__.getX);// false
+    console.log(Fn.prototype.getX === f.__proto__.getX);// true
+    console.log(f.getY);// undefined
+    console.log(f.toString);// function
+    console.log(f);
+
+    var  obj = {};
+    // 原型链： 当获取对象属性名对应的属性值时，如果当前属性名不存在，那么会默认通过__proto__向上一级查找，如果上一级没有，会通过上一级的__proto__向上查找，指导找到Object的原型为止，如果Object原型中也没有，那么得到undefined；这样通过__proto__向上查找就会形成一个原型链；
+
+
+    var ary = [];
+    var arr = [12,3.4];
+    console.log(ary.pop === arr.pop);
+    // Array
+    console.log(arr.pop = Array.prototype.pop);// true
+    console.log(arr.toString === Object.prototype.toString);
+</script>
+</body>
+</html>

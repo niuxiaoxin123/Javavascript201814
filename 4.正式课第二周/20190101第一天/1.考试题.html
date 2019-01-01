@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.sort : ary.sort(function(a,b){return b-a})
+    //var   ary = [12,3.4,8]
+    // 2.pop  ary.length--; ary.splice(ary.length-1,1)
+    // 3.slice(n-1,m)
+    // 4.document.documentElement.clientHeight || document.body.clientHeight
+    //5. appendChild  insertBefore
+    // 6.previousElementSibling
+    function getBro(curEle) {
+        var pre = curEle.previousSibling;
+        while(pre){
+            if(pre.nodeType===1){
+                return pre;
+            }
+            pre = pre.previousSibling;
+        }
+    }
+    // 8.replace
+    // 11. var div  document.createElement("div")
+    var div = document.createElement("div");
+    document.body.appendChild(div);
+    var newDiv = div.cloneNode(true);
+    document.body.insertBefore(newDiv,div);
+   // 12.slice  splice  concat
+
+
+    // Number :5
+    // string : 14
+    // array : 14
+    // Math : 10
+    // DOM的节点和属性
+    // 动态操作DOM
+    // Date
+    // 数据类型比较规律
+
+    //
+    /*console.log(num);// undefined
+    if(!("num" in window)){
+        var num =100;
+    }
+    console.log(num);*/// undefined
+
+    /*var i=2;// 4  5  10  11  12  24
+    function fn() {
+        i*=2;
+        return function (n) {
+            console.log(n*(++i))
+        }
+    }
+    var f = fn();
+    f(3)// 15
+    fn()(3)//33
+    f(4)// 48
+    fn()(4)*/// 100
+
+   /* var obj = {
+        num:1,
+        fn:(function () {
+
+        })(obj.num)
+    }*/
+
+
+  /* var num =1;
+  var  a =  num*12;
+    console.log(num);
+
+    var obj = {
+        num:12
+    }*/
+
+  var  obj = {
+      fn:(function () {
+          console.log(1);// 此处函数是存储键值对时执行；
+          return function () {
+
+          }
+      })()
+  }
+  obj.fn();
+
+</script>
+</body>
+</html>

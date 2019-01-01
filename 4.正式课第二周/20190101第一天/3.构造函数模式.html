@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function Fn() {
+        // var obj = {};
+        // this--> obj;
+        // 在代码运行之前，会默认创建一个空对象，并且让当前作用域下的this指向了这个空对象；
+        // 在构造函数中的this指向当前的实例；
+        this.a=100;
+        // return this
+    }
+    var p1 = Fn();
+    var p2=new Fn();
+    console.log(p2);*/// {a:100}
+    // 函数既可以作为普通函数，也可以作为构造函数；
+
+    // 对象： 万物皆对象
+    // 类： 具有相同特征的一类事物
+    // 实例： 具体的一个事物
+    // 通过类可以创建实例，new + 类；
+
+    // 类 ： 内置类和自定义类;所有的类都是函数；
+    // 内置类： Number  String  Boolean Null Undefined Function Object  Array ...
+    // 自定义类：
+    //console.log(typeof Number);// "function"
+    /*var  ary = [];
+    var arr = new Array(1,2,3);
+    console.log(arr);*/
+    // 通过构造函数或者类new出来的都是一个实例；
+    function Day() {
+        this.a = 100;
+        this.b =8;
+    }
+    var  d= new Day;
+    console.log(d);
+    console.log(d.toString);// 公有属性
+
+    /*var ary1 = [12,34];
+    var ary2 = [2,354];
+    ary1.pop();
+    ary2.pop();
+    console.log(ary1.pop === ary2.pop);*/
+
+    // 1.构造函数中的this永远指向当前的实例
+    // 2.如果没有参数，可以省略小括号；
+    // 3.如果return一个基本数据类型的值，不会覆盖默认返回的那个对象，如果return引用的类型，会将默认的那个覆盖掉；
+    // 4.instanceof ：检测实例是否属于某个类；
+    // 5.hasOwnProperty: 检测当前属性是否是私有属性，如果是返回true，不是返回false；
+    console.log(d.hasOwnProperty("a"));//true
+    console.log(d.hasOwnProperty("toString"));//false
+    console.log(d.hasOwnProperty("c"));// false
+
+    function hasPublicProperty(obj,attr) {
+       /* if (attr in obj){
+            // 验证attr是obj的一个属性
+         // s首先要求是obj的一个属性；如果是私有返回false，不是私有一定是公有；
+            if(obj.hasOwnProperty(attr)){
+                return false
+            }else{
+                return true;
+            }
+        }else{
+            return false;
+        }*/
+        return attr in obj && !obj.hasOwnProperty(attr)?true:false;
+    }
+    console.log(hasPublicProperty(d,"toing"));
+
+    var  obj = {a:1};
+    console.log(obj.a);// 1
+
+
+
+</script>
+</body>
+</html>

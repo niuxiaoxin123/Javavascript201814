@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 构造函数模式： 解决了实例的私有属性的问题
+    // 原型模式： 解决了实例属性的公有问题；
+
+    function Fn(m,n){
+        this.x = m;
+        this.y = n;
+    }
+    Fn.prototype.getX = function(){
+        console.log(this.x)
+    }
+    var  f = new Fn(100,200);// f 是Fn的一个实例{x:100,y:200}
+    var  f1 = new Fn(300,400);
+    console.log(f);
+    f.getX();
+    console.log(f.getX === f.__proto__.getX);// true f.getX省略了__proto__;
+    console.log(f.getX === f1.__proto__.getX);// true
+    console.log(Fn === f.constructor);// true
+    console.log(Fn.prototype === f.__proto__);// true
+
+    /*console.log(f == f1);// false
+    console.log(f.x === f1.x);// true
+    console.log(f.getX == f1.getX);// false
+    f.getX();
+    f1.getX();*/
+
+    // 理解原型：
+    // 1. 所有的函数数据类型都天生自带一个prototype属性，该属性的属性值是一个对象；
+    // 2. prototype的属性值中天生自带一个constructor属性；其constructor属性值指向当前原型所属的类；
+    // 3. 所有的对象数据类型，都天生自带一个__proto__属性，该属性的属性值指向当前实例所属类的原型；
+
+  /*  Fn ={prototype:{constructor:Fn,getX:function}}
+    Fn.prototype.getX =function () {
+
+    }
+    var f1 = new Fn;
+    var f2 = new Fn;
+    f1.getX();// getX 是一个公有的属性；
+    {x:100,y:200,__proto__:{constructor:Fn,getX:function}}*/
+
+
+</script>
+</body>
+</html>

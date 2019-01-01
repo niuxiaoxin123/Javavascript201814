@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function Fn() {
+        this.x = 10;
+        this.y=20;
+    }
+    //console.log(Fn.prototype);
+    // 向函数原型中新增键值对；
+    // 1.
+   /!* var  f = new Fn;
+    Fn.prototype.getX =function () {
+        console.log(this.x);
+    }
+    f.getX()*!/
+    //2.用新的空间地址替换Fn原型原有的空间地址；
+    // 会导致原有的constructor丢失；
+    function Fn() {
+        this.x = 10;
+        this.y=20;
+    }
+    Fn.prototype.getX= function () {
+        console.log(this.y)
+    }
+    var f  = new Fn;
+    // 此处new Fn会创建出f实例，当前f实例的__proto__占用了Fn的原有的原型的空间地址；当对齐修改地址时，原有的原型地址不能被销毁；
+    Fn.prototype={
+        getX:function () {
+            console.log(this.x);
+        }
+    }
+    f.getX();
+    var f1 = new Fn;
+    f.getX();*/
+    //console.log(f.constructor);// Object
+
+    // 内置类
+    // 内置类扩展时，如果和内置的方法名相同，会对其进行覆盖
+    // 内置类原型的空间地址不可以被修改；只能向其中新增一些方法；
+   /* Array.prototype.pop = function () {
+        console.log(100);
+    }*/
+    //Array.prototype={},这种方式只适用于自定义类；
+    var ary = [12,3,4];
+    ary.pop();
+</script>
+</body>
+</html>
