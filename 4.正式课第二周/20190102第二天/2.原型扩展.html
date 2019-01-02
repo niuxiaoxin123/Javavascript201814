@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var ary = [1,2,3,3,2,1];
+    var ary1 = [10,2,30,3,20,1];
+    // 所有的数组都是Array的一个实例；所以所有的数组都可以使用Array原型上的方法；
+    // pop  push  splice...等方法都在Array 的原型上；
+ /*   Array.prototype.sum= function () {
+        // this --> 谁调sum，那么方法就指向谁
+        var total = 0;
+        for(var i=0;i<this.length;i++){
+            total+=this[i]
+        }
+        return total;
+    }
+    var count = ary.sum();
+    box.innerHTML = count;*/
+
+    //
+   /* Array.prototype.unique = function () {
+        // this ---> 要处理的数组
+        /!*var  a = [];
+        for(var i=0;i<this.length;i++){
+            if(a.indexOf(this[i])===-1){
+                a.push(this[i]);
+            }
+        }
+        return a;*!/
+        var  obj= {};
+        for(var i=0;i<this.length;i++){
+            var cur = this[i];
+            if(obj[cur]===cur){
+                this[i] = this[this.length-1];
+                this.length--;
+                i--;
+                continue;
+            }
+            obj[cur] = cur;
+        }
+        return this;
+    }
+    ary.unique();*/
+
+
+    // pop
+    var ary = [1,2,3,3,2,100];
+    Array.prototype.myPop = function () {
+        var last = this[this.length-1];
+        this.length--;
+        return last;
+    };
+    console.log(ary.myPop());
+    console.log(ary);
+
+    // push  slice  sort  reverse  indexOf  concat
+</script>
+</body>
+</html>

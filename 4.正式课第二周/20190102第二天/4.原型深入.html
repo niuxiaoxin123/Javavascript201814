@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.每个函数数据类型（函数、类）都天生自带一个prototype属性,这个属性的属性值是一个对象
+    // 2. prototype 的属性值中天生自带一个constructor属性，这个属性的属性值指向当前原型所属的类
+    // 3. 每个对象数据类型（{}、[]、实例）都天生自带一个__proto__ 属性，这个属性的属性值指向当前实例所属类的原型；
+
+    //4.所有的函数（普通函数、类[自定义类、内置类]）都是Function的一个实例
+
+
+    // Function 是一个类，先是自己的一个实例；
+    // 类： 内置类： Number  String Boolean  Null Undefined Object  Array  Function  RegExp ...
+    //Math : 不是一个类
+    //Date : 时间类；
+    function Fn() {
+
+    }
+    Fn.prototype.getX= function () {
+        console.log(100);
+    }
+    var f = new Fn();
+    f.getX();
+    //Fn.getX();
+    console.log(Fn instanceof Function);
+    console.log(Function instanceof Function);
+    console.log(Function);
+
+    Object.hasOwnProperty()
+    Fn.hasOwnProperty()
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 求数组中的最大值
+    var  ary = [1,3,66,45,23,78,99,45,63,72];
+    // 1. 先排序,后取值
+    /*ary.sort(function (a,b) {
+        return a-b;
+    });
+    var max = ary[ary.length-1]
+    console.log(max);*/
+
+    // 2.相邻两项今夕比较，如果前面比后面大，交换位置；
+  /*  for(var i=0;i<ary.length;i++){
+        if(ary[i]>ary[i+1]){
+            var temp = ary[i];
+            ary[i]=ary[i+1];
+            ary[i+1] = temp;
+        }
+    }
+    console.log(ary[ary.length - 1]);*/
+
+    var  ary = [1,3,66,45,23,78,99,45,63,72];
+    // 3.假设法
+    // 假设第一项是最大值，然后让数组每一项和这一项进行比较，比该项大，就用新的值进行覆盖；
+   /* var  max = ary[0];
+    for(var i=1;i<ary.length;i++){
+        /!*if(ary[i]>max){
+            max= ary[i];
+        }*!/
+        ary[i]>max?max=ary[i]:null;
+    }
+    console.log(max);*/
+
+   // 4. Math.max: 求一组数的最大值；
+   // apply解决传参的问题；
+   // console.log(Math.max.apply(null, ary));
+
+    //5.展开运算符
+    console.log(Math.max(...ary));
+
+
+</script>
+</body>
+</html>

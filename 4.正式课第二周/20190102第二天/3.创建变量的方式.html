@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 基本数据可以使用typeof进行检测；
+    // 1. 字面量方式创建
+    /*var a = 100; // a是实例，但是不是一个标准的实例；
+    console.log(typeof a);// "number"
+
+    var  obj = {num:1,b:1}
+    function fn() {
+
+    }
+    var  ary = [];*/
+
+    // 2. 实例创建变量
+   /* var r = new Number(1);// 创建一个number的实例；
+    var t = new Number(100);
+    console.log(r);
+    console.log(r+1);
+    r.toFixed(2)
+    parseInt(r)
+    Number()
+
+    var o = new Object;
+    var obj = {};
+    console.log(o);
+
+    var arr = new Array;
+    var d = new Function;
+    console.log(d);*/
+   // 一般情况下都会使用字面量方式创建变量；
+    // 两种方式的区别
+    var  a = 1;
+    var a1 = new Number(1);
+    console.log(a === a1);//false
+    // 通过字面量方式创建的实例基本数据类型的实例不是一个标准的实例，不能使用instanceof进行检测；
+    console.log(a instanceof Number);
+    // 通过new创建的实例，不能使用typeof进行数据类型的检测；都返回"object"
+    console.log(typeof a);// "number"
+    console.log(typeof a1);// "number"
+
+
+
+
+</script>
+</body>
+</html>

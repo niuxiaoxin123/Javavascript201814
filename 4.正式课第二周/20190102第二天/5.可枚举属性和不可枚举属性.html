@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* function Fn() {
+        this.x = 100;
+        this.y = 200;
+    }
+    Fn.prototype.getX = function () {
+        console.log(100);
+    };
+    var f = new Fn();
+    // for in
+    for(var key in  f){
+        console.log(key);
+    }
+
+   Object.prototype.c = function () {
+       
+   }
+    var  obj = {a:1,b:2};
+    for(var key in obj){
+        console.log(key);
+    }*/
+
+    // 可枚举属性： 私有的属性和自定义的公有属性；
+    // 不可枚举： 是公有属性并且是内置的属性；
+
+    Array.prototype.aa = function () {
+        
+    };
+    var arr = [12,3,45,50];
+    for(var key in arr){
+        // hasOwnProperty
+        // arr 找自己私有属性没有，会通过__proto__去向Array的原型去找，发现没有，继续通过Array原型中的__proto__继续找到Object的原型中的hasOwnProperty
+        if(arr.hasOwnProperty(key)){
+            console.log(key);
+        }
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

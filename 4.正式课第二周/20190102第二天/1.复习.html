@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 原型模式
+    // 1.每个函数数据类型（函数、类）都天生自带一个prototype属性,这个属性的属性值是一个对象
+    // 2. prototype 的属性值中天生自带一个constructor属性，这个属性的属性值指向当前原型所属的类
+    // 3. 每个对象数据类型（{}、[]、实例）都天生自带一个__proto__ 属性，这个属性的属性值指向当前实例所属类的原型；
+    //{prototype:{constructor:Fn}}
+    /*function Fn(){
+
+     }
+     var f = new Fn;
+     // f 是Fn这个类的一个实例  instanceOf
+     var obj = {};// Object
+     console.log(obj instanceof Object);
+     console.log(Object);*/
+    // 类一定是函数，函数不一定是类；
+
+    // 原型中的this
+   /* function Fn() {
+        this.x = 100;
+        this.y = 200;
+        this.getX = function () {
+            console.log(this.x);
+        }
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.x);
+    };
+    Fn.prototype.getY = function () {
+        console.log(this.y);
+    };
+    var f1 = new Fn;//{x:100,y:200,getX:function}
+    var f2 = new Fn;// {x:100,y:200,getX:function}
+    console.log(f1.getX === f2.getX);// false
+    console.log(f1.getY === f2.getY);// true
+    console.log(f1.__proto__.getY === Fn.prototype.getY);// true
+    console.log(f1.__proto__.getX === f2.getX);//   false
+    console.log(f1.getX === Fn.prototype.getX);//  false
+    console.log(f1.constructor);// Fn
+    console.log(Fn.prototype.__proto__.constructor);// Object
+    f1.getX();// 100
+    f1.__proto__.getX();// undefined
+    f2.getY();// 200
+    Fn.prototype.getY()//*/// undefined
+
+
+    //原型的扩展
+   /* function Fn() {
+        this.x = 100;
+    }*/
+    //Fn.prototype// {constructor:Fn,__proto__:{}}
+    // 向Fn的原型中新增键值对；原型的扩展；
+    /*Fn.prototype.getX = function () {//原型模式解决了公有属性的问题；
+
+    }
+    Fn.prototype.getY = function () {//原型模式解决了公有属性的问题；
+
+    }
+    Fn.prototype.getZ = function () {//原型模式解决了公有属性的问题；
+
+    }
+    var f = new Fn;
+    f.getX();
+*/
+    //
+   /* function Fn() {
+        this.x = 100;
+    }
+    Fn.prototype={
+        getX:function () {
+
+        },
+        getY:function () {
+
+        },
+        getZ:function () {
+
+        }
+    };
+    var f = new Fn;
+    f.getX();
+    console.log(f.constructor);// Object
+    // 会导致Fn原型中constructor的丢失；
+
+    var  ary = [12,3,4,512,12,3];
+    // 内置类
+    Array.prototype.pop = function () {
+        console.log("201814都很帅")
+    }
+    Array.prototype.aa = function () {
+        console.log(110);
+    }*/
+   // ary.pop();
+    // Array.prototype= {};这种方式不能对内置类原型地址进行覆盖；
+    //ary.aa()
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
