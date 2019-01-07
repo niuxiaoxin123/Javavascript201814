@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  1. typeof
+    //  2. instanceof
+    //  3. constructor
+    //  4. Object.prototype.toString.call();
+
+    // 1. typeof
+    //  1) : 返回一个字符串
+    //  2) :1. typeof null -->“object”
+    //     :2. 不能检测对象数据类型的；
+    //     :3. 不能检测通过实例方式创建的变量
+    //var num = new Number(1);
+    //console.log(typeof num);
+
+    // 2. instanceof : 检测当前实例是否属于某个类；
+    // 1. 不能检测通过字面量方式创建的基本数据类型值
+    // 2. 只要当前类在当前实例的原型链上，都返回true；
+   /* var  num = 1;
+    console.log(num instanceof Number);// false
+    var obj = {a:1};
+    console.log(obj instanceof Object);// true
+    function fn() {};
+    console.log(fn instanceof Function);// true
+    console.log(fn instanceof Object);// true
+    var  arr = [];
+    console.log(arr instanceof Object);*/// true
+
+    // 3. constructor；
+    // 1. 原型修改或者继承都会影响检测结果；
+    /*var  arr=[];
+    console.log(arr.constructor === Array);// true
+    console.log(arr.constructor === Object);// false
+
+    var num = 1;// 不是一个标准的实例；
+    console.log(num.constructor === Number);// true
+    function Fn() {
+    }
+    Fn.prototype={};
+    var f = new Fn;
+    console.log(f.constructor === Fn);*/
+
+    // 4.Object.prototype.toString.call();
+    // 首先找到Object的原型上的toString ,然后通过toString找到Function原型上的call，并且让其执行，改变toString中的this指向，让toString，在toString中，对this进行检测，并返回一个字符串；
+   /* var  num = new Number(10)
+    console.log(Object.prototype.toString.call(num));// "[object Number]"
+    console.log(Object.prototype.toString.call(true));
+    console.log(Object.prototype.toString.call("true"));
+    console.log(Object.prototype.toString.call(null));
+    console.log(Object.prototype.toString.call(undefined));
+    console.log(Object.prototype.toString.call({}));
+    console.log(Object.prototype.toString.call([]));
+    console.log(Object.prototype.toString.call(function () {
+    }));*/
+    console.log(toString.call(18));
+    console.log(toString === Object.prototype.toString);
+
+</script>
+</body>
+</html>

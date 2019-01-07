@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" class="box" style="width: 100px;height:100px;background: black"></div>
+<script>
+
+    // 调试代码：
+    // 1. 先看控制台有没有报错；
+
+    // 1. console.log() : 打印日志；让该值在控制台显示出来；
+    // 2. debugger
+    /* var oBox = document.getElementsByClassName("box");
+
+     oBox[0].style.background="red";
+
+     debugger;
+     // debugger : 代码解析到debugger这个语句，代码会立即停止;控制代码的运行；
+     console.log(100);*/
+    /* function fn() {
+     var a = 1;
+     debugger;
+     }
+     for(var i=0;i<10;i++){
+     debugger
+     console.log(10)
+     }*/
+
+
+    var a = 1;
+    function v() {
+    }
+    // F10 : 代表走下一行
+    // F8 : 代表下一个断点；
+    var oBox = document.getElementsByClassName("box");
+    function fn() {
+        oBox[0].style.background="red";
+        debugger
+    }
+    oBox[0].onclick = fn;
+</script>
+</body>
+</html>

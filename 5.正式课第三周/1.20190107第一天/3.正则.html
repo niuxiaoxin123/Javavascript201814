@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正则 ： 处理字符串的一种规则
+    //var  reg = /123/;
+    //console.log(typeof reg);// "object";  RegExp这个类的实例；
+    //console.log(reg instanceof RegExp);// true;
+    // \d : 0-9
+    var reg = /\d+/; //包含一个0-9的数字
+    // test : 检测当前字符串是否符合正则定义的这个规则；如果符合返回true，不符合返回false；
+    console.log(reg.test("abc123"));
+    // 元字符 : 在正则中有特殊意义的一些字符；
+    // \d : 0-9的数字
+    // \w : 字母、数字、下划线；
+    // \b : 匹配单词的边界
+
+    // 量词元字符
+    // ? : 0次或1次
+    // * : 0到多次
+    // + : 1到多次
+    // {n} : n次
+    // {n,m} : n到m次
+
+    // ^ : 以什么什么开头
+    // $ : 以什么结尾
+    // - :
+
+    // 正则一般用于表单验证；
+    // 有效数字的正则：
+
+/*    var reg = /^-?(\d|[1-9]\d+)(\.(\d)+)?$/;
+    console.log(reg.test("123.3333"));*/
+
+//
+    /* var reg = /^[12-65]$/
+    // 1.中括号不识别两位数；
+    // 2.在中括号^代表除了；
+    console.log(reg.test("48"));*/
+    var reg = /^[^abc]$/;
+    console.log(reg.test("d"));
+
+
+</script>
+</body>
+</html>

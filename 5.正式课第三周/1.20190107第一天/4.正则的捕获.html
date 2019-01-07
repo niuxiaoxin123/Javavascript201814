@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 正则的元字符
+    // 2. 处理字符串的规则： test : 校测
+    // 3. exec : 捕获：把符合正则内容的字符从字符串找出来；
+    // test\exec 都在RegExp这个内置类的原型上，所有的正则实例，都可以调用；
+    //var  reg = /\d+/g;
+    //console.log(reg.test("88"));// true
+    // 捕获 ：方法exec返回一个数组，
+    // "123" : 代表是捕获的内容
+    // ["123", index: 0, input: "123", groups: undefined]
+    // 第一项： 捕获的内容
+    // 第二项: 开始的捕获的索引
+    // 第三项：代表是要捕获的字符串；
+    // 如果捕获不到内容，那么结果返回null；
+
+//    console.log(reg.exec("123abc456"));
+//    console.log(reg.lastIndex);// 3
+//    console.log(reg.exec("123abc456"));//
+//    console.log(reg.lastIndex);// 9
+//    console.log(reg.exec("123abc456"));
+
+    // 2正则捕获的性质：1.懒惰性  2. 贪婪性
+    // 正则的修饰符； 用于修饰正则的；
+    //3. g :  global 取消捕获的懒惰性; 每当捕获一次，都会改变当前正则的lastIndex属性的属性值；用来记录最后一次捕获的索引位置；那么下一次再进行捕获，会从lastIndex的下一位开始重新捕获；
+    // i : ignoreCase : 忽略字母大小写；
+    // m :  mutiline : 多行匹配
+
+    /*var  reg = /[a-z]+/gi;// 字母数字下划线
+    console.log(reg.exec("ABC88edf"));
+    console.log(reg.exec("ABC88edf"));*/
+    // 贪婪性： 在量词的后面加上?,取消正则捕获的贪婪性；
+ /*   var reg = /\d+/g;
+    console.log(reg.exec("123abc456"));// "123"
+    console.log(reg.exec("123abc456"));// *///"123"
+
+    // 4.分组捕获
+    // 1. 小括号：可以改变正则的优先级；
+    // | : 放在括号中，会把括号中分成左右两部分
+    var reg = /^-?(\d|([1-9]\d+))(\.\d+)?$/;
+    console.log(reg.test("001"))
+    console.log(reg.exec("12.889"));
+
+    // 2.小括号捕获： 如果在大正则中有小正则；先要大正则进行捕获，然后小括号也要进行；当一个正则中有多个括号时，会从左到右依次进行捕获；
+
+
+</script>
+</body>
+</html>

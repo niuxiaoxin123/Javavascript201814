@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var str = "my name is  pengbo,i am  22 years old,i like study";
+    // 1. 把所有的首字母转大写的；
+    //  1) : 先用正则找到对应的首字母，然后把其转大写字母，进行替换；
+    var newStr = str.replace(/\b[a-z]/g,function () {
+        return  arguments[0].toUpperCase()
+    });
+    console.log(newStr);*/
+
+   /* var  str = "20190107";
+    var  ary = ["零","壹","贰","叁","肆","伍","陆","柒","捌","玖"];
+    var newStr = str.replace(/\d/g,function () {
+        //console.log(arguments);
+        return ary[arguments[0]]
+    })
+    console.log(newStr);*/
+
+    //3.
+    var  str = "2019-01-07 17:29:30";
+    var  ary = ["年","月","日","时","分","秒"];
+    var  time = "";
+    var i =0;
+    str.replace(/\d+/g,function () {
+        time+=arguments[0]+ary[i];
+        i++;
+    })
+    console.log(time);
+
+    // 作业 : 多多位数加千分符；
+     var str = "1778902073839";
+     str = "1,778,902,073,839";
+
+
+</script>
+</body>
+</html>

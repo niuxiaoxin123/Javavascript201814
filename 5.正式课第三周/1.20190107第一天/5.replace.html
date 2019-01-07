@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // replace ： 字符串替换的方法，每次只能替换一个；
+    var  str = "zhufeng2018zhufeng14";
+   /* var newStr = str.replace("zhufeng","zhufengpeixun").replace("zhufeng","zhufengpeixun");*/
+   /* var newStr=str.replace(/zhufeng/g,"zhufengpeixun");
+    // 1. replace(正则,字符串):正则+g；可以替换多个；
+    console.log(newStr);
+    console.log(str);*/
+
+    // 2.
+    var newStr=str.replace(/zhufeng/g,function () {
+        // 回调函数捕获多少次，执行多少次；
+        // arguments : 代表的正则对该字符串捕获的内容；
+        // return : 把捕获内容进行替换；
+        // console.log(arguments);//
+        return "abc";
+    })
+    console.log(newStr);
+
+    //回调函数： 把函数B作为实参传给函数A，在函数A中任意的位置都可以调用函数B；那么函数B就叫做函数A的回调函数；
+    function A(m) {
+        m()
+    }
+    A(function B() {
+
+    })
+
+
+
+
+</script>
+</body>
+</html>
