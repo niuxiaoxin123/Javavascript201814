@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width:300px;
+            height:300px;
+            background: red;
+            margin:100px auto;
+        }
+        #inner{
+            position: relative;
+            width:200px;
+            height:200px;
+            background: yellow;
+            margin:auto;
+            border:10px solid pink;
+        }
+        #center{
+            width:100px;
+            height:100px;
+            background: blue;
+            border:10px solid pink;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div id="center"></div>
+    </div>
+</div>
+<script>
+    // 8个属性
+    // 1.offsetParent : 父级参照物；
+    // 2.offsetLeft : 左偏移量
+    // 3.offsetTop ： 上偏移量
+    // 偏移量：当前元素的外边框距离父级参照物内边框的距离；
+    // 父亲节点： parentNode;
+    // 父级参照物： 一般情况下，页面中的元素的父级参照物是body；如果给页面中某个元素加上position属性，那么会影响当前元素的子孙元素的父级参照物都会执行该元素；
+    var outer = document.getElementById("outer");
+    var inner = document.getElementById("inner");
+    var center = document.getElementById("center");
+    console.log(outer.offsetLeft);
+    console.log(inner.offsetLeft);
+    console.log(center.offsetLeft);
+    console.log(center.offsetParent);
+    console.log(document.body.offsetParent);// null;
+
+    // 计算当前元素距离body的偏移量
+    function offset(curEle) {
+        var l = curEle.offsetLeft;
+        var t = curEle.offsetTop;
+        var  parent = curEle.offsetParent;
+        while(parent){
+            // 加上父级参照物的边框 + 父级参照物的偏移量；
+            l+=parent.clientLeft+parent.offsetLeft;
+            t+=parent.clientTop+parent.offsetTop;
+            parent= parent.offsetParent;
+        }
+        return {
+            left:l,
+            top:t
+        }
+    }
+    console.log(offset(center).left);
+
+
+</script>
+</body>
+</html>

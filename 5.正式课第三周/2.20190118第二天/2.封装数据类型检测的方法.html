@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.
+    (function () {
+       var obj = {
+           isNumber:"Number",
+           isString:"String",
+           isBoolean:"Boolean",
+           isNull:"Null",
+           isUndefined:"Undefined",
+           isObject:"Object",
+           isArray:"Array",
+           isFunction:"Function"
+       }
+       var checkType = {};
+       for(var key in obj){
+           checkType[key] = (function () {
+               // 当前栈内存不销毁，栈内存不销毁，里面所有的值都不销毁；
+               // 这是一个闭包，起到了保存值的作用；
+               var cur = obj[key];
+               /*return function (val) {
+                   var result = toString.call(val)==="[object "+obj[cur]+"]"
+                   return  result;
+               };*/
+               return function (val) {
+                   var  reg =new RegExp("\\[object "+cur+"\\]");
+                   return reg.test(toString.call(val));
+               }
+           })()
+       }
+       // 给全局window新增一个checkType的键值对；外界就可以调用checkType这个对象；
+        window.checkType = checkType;
+    })();
+    console.log(checkType.isNumber(100));// 如果是直接返回true，不是返回false；
+    console.log(checkType.isNumber("100"));
+    console.log(checkType.isArray([]));
+    console.log(checkType.isString("110"));
+
+
+
+ /*   var  cur = "abc";
+    var str = "123"+cur+"456"*/
+
+
+    // 1.正则的创建
+    /*var  cur = "Number"
+    var reg= /\[object Number\]/;
+    // 2. 实例创建
+    // 如果创建一个带有变量的正则，需要使用实例创建的方式；
+    console.log(new RegExp("\\d"+cur));
+
+    console.log(new RegExp("\\[object "+cur+"\\]"));*/
+
+
+</script>
+</body>
+</html>

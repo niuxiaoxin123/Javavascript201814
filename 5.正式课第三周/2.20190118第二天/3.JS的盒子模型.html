@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:200px;
+            height:200px;
+            border:10px solid pink;
+            padding:20px;
+            margin:30px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="box">刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访</div>
+<script>
+    var  oBox = document.getElementById("box");
+    // oBox : 是一个对象；
+
+    // 1. clientWidth   clientHeight
+    // clientWidth = width + padding*2
+    // clientHeight = height + padding*2
+    // 这两个属性的属性值都是一个数字类型；而且不带单位；
+    console.log(oBox.clientWidth);
+    console.log(oBox.clientHeight);
+
+    // html body
+    // 浏览器可视区域的宽度和高度；
+    console.log(document.documentElement.clientWidth);
+    console.log(document.body.clientWidth);
+    //console.log(document.documentElement.clientHeight);
+    var winW = document.documentElement.clientWidth||document.body.clientWidth;
+
+
+    // 2.clientLeft  clientTop
+    // clientLeft : 左边框的宽度
+    // clientTop : 上边框的高度；
+    //console.log(oBox.clientLeft);
+
+
+    // 3.offsetWidth  offsetHeight
+    //offsetWidth = clientWidth + border*2
+    //offsetWidth = clientHeight + border*2
+    //console.log(oBox.offsetWidth);// 260
+
+    // 4. scrollWidth  scrollHeight
+
+    // 1. 在盒子没有溢出的情况下： scrollWidth 和clientWidth 相等
+    // 2. 在盒子有溢出的情况下： 内容的真实高度+ 上padding；
+
+    console.log(oBox.scrollWidth);
+    console.log(oBox.scrollHeight);
+</script>
+</body>
+</html>

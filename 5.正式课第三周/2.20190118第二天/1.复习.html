@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正则的捕获：
+    // exec : 返回一个数组
+    // [捕获的内容，index:捕获的内容开始的索引，input: 要捕获的内容]
+    /*var reg = /\d+/g;
+    reg.exec("123abc456")// 123   0
+    console.log(reg.lastIndex);
+    reg.exec("123abc456")// 45*///6   0
+
+    // 1.懒惰性   2. 贪婪性
+    // g: 取消捕获的懒惰性；
+    // i:  忽略大小写；
+    // m : 多行匹配
+
+
+    // 量词后面加上问号，取消捕获的贪婪性；
+    /*var reg = /\d+?/g;
+    reg.exec("123abc456")/*///"123"
+
+    // 分组捕获： 括号会对正则进行再次捕获；
+    //var reg = /(())()/
+
+    //replace :
+    // 1. replace(oldStr,newStr);用newStr替换oldStr；
+    // 2. replace(//,"")
+    // 3. replace(//,function(){
+    //     1. 捕获多少次，执行多少次
+    //     2. arguments  捕获的内容
+    //     3. return   把捕获的内容进行替换
+    // })
+
+    var  str = "zhufeng123";
+    var  newStr = str.replace(/zhufeng/,function () {
+        return "zhufengpeixun"
+    });
+    console.log(str);
+    console.log(newStr);
+
+    function A(m) {
+        m()
+    }
+
+    var r = A(function B() {
+        return 100;
+    });
+    console.log(r);
+
+    // 这一行到底干什么；
+
+
+    // 数据类型检测：
+    // 1. typeof
+    //   1)
+    //   2)
+    // 2. instanceof
+    //   1)
+    //   2)
+    // 3. constructor
+    //   1)
+    // 4. Object.prototype.toString.call()
+    //   "[object Number]"
+
+    function fn() {
+
+    }
+    Object.prototype.toString.call(fn)//"[object Function]"
+    if(Object.prototype.toString.call(fn)==="[object Function]"){
+        fn();
+    }
+
+</script>
+</body>
+</html>

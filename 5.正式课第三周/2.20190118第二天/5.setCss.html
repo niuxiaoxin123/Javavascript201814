@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            border:10px solid pink;
+            padding:20px;
+            margin:30px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script src="utils.js"></script>
+<script>
+   // 1. 要操作谁，就要先获取谁
+    var oBox = document.getElementById("box");
+   console.log(utils.css(oBox, "width"));
+   //2.绑定点击事件
+/*
+    oBox.onclick = function () {
+        /!*setCss(oBox,"width",200)
+        setCss(oBox,"height",200)*!/
+        //setCss(oBox,"background","red")
+        setGroupCss(oBox,{width:200,height:200,background:"red"})
+    }
+
+    function setCss(curEle,attr,val) {
+        var reg = /^(width|height|top|left|right|bottom)$/;
+        if(reg.test(attr)){
+            // 如果是设置上面这些属性时，加px单位
+            if(typeof val==="number"){
+                //
+                val = val+"px";
+            }
+        }
+        curEle.style[attr]=val;
+    }
+    // 设置一组样式
+    function setGroupCss(curEle,option) {
+        for(var key in option){
+            setCss(curEle,key,option[key])
+        }
+    }
+   function getCss(curEle,attr) {
+       var  val;
+       if("getComputedStyle" in window){
+           val = getComputedStyle(curEle)[attr];
+       }else{
+           val =curEle.currentStyle[attr]
+       }
+       // 校验当前传来的属性是否是带px单位；
+       var reg = /^(width|height|left|top|right|bottom|margin|padding|fontSize)$/;
+       if(reg.test(attr)){
+           // 去掉单位，转成数字
+           if(!isNaN(parseFloat(val))){
+               // 如果获取的是空字符串的话，直接返回空字符串
+               val = parseFloat(val);
+           }
+       }
+       return val;
+   }
+   // 把getCss和setCss和setGroupCss融合到一个css中；
+   function css(...arg) {// 放在形参的位置是剩余运算符
+       // 根据参数个数不同，进行校验；然后再根据参数的数据类型进行判断；
+       if(arg.length===3){
+           setCss(...arg)// 实参就是展开运算符
+       }else if(arg.length===2){
+           if(toString.call(arg[1])==="[object Object]"){
+               setGroupCss(...arg)
+           }else{
+               getCss(...arg)
+           }
+       }
+   }
+    css(oBox,"width",300);
+    css(oBox,{width:200,height:200,background:"red"})
+    css(oBox,"width");
+*/
+
+
+
+
+
+
+</script>
+</body>
+</html>

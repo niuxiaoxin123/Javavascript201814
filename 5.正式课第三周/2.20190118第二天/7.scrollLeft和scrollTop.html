@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            margin:1200px auto;
+        }
+        #two{
+            width:100px;
+            height:100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="two">222</div>
+<div id="box">你很好</div>
+<script>
+    // 1. client系列
+    // 1. clientWidth  clientHeight  clientLeft  clientTop
+    // 2.offset系列
+    // 1.offsetWidth  offsetHeight   offsetParent  offsetLeft  offsetTop
+    // 3.scroll系列
+    // 1. scrollWidth  2.scrollHeight 3. scrollLeft  4.scrollTop
+
+    // 11个属性，只读属性；
+    // scrollLeft  scrollTop : 可读写属性；
+    // scrollLeft : 横向滚动条卷去的宽度
+    // scrollTop : 纵向滚动条卷去的高度
+
+   var scrollLeft = document.documentElement.scrollLeft||document.body.scrollLeft;
+   function win(attr,val) {
+       if(typeof val==="undefined"){
+           document.documentElement[attr] = val;
+           document.body[attr] = val;
+       }else{
+           return document.documentElement[attr]||document.body[attr]
+       }
+   }
+   win("scrollTop");
+   win("scrollTop",500);
+
+
+</script>
+</body>
+</html>

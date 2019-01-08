@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:200px;
+            height:200px;
+            border:10px solid pink;
+            padding:20px;
+            margin:30px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖|金正恩首次在生日这天出访刘永坦、钱七虎获国家最高科学技术奖
+    </div>
+<script>
+    var oBox = document.getElementById("box");
+    console.log(oBox.style.width);//"300px"
+    // 1. 获取样式的第一种方式
+    // 元素.style.属性
+    // 这种方式只能获取行内设置的样式；如果在css中是获取不到的；
+    // 2. getComputedStyle
+    // 在IE8及以下，不能使用这个方法；
+    // getComputedStyle(元素).属性
+    // getComputedStyle(元素)["属性名"]
+    //  获取浏览器计算的样式
+    //console.log(getComputedStyle(oBox).width);
+    //console.log("getComputedStyle" in window);
+    // 3. currentStyle
+    //console.log(oBox.currentStyle.width);
+    function getCss(curEle,attr) {
+        var  val;
+        if("getComputedStyle" in window){
+            val = getComputedStyle(curEle)[attr];
+        }else{
+            val =curEle.currentStyle[attr]
+        }
+        // 校验当前传来的属性是否是带px单位；
+        var reg = /^(width|height|left|top|right|bottom|margin|padding|fontSize)$/;
+        if(reg.test(attr)){
+            // 去掉单位，转成数字
+            if(!isNaN(parseFloat(val))){
+                // 如果获取的是空字符串的话，直接返回空字符串
+                val = parseFloat(val);
+            }
+        }
+        return val;
+    }
+    console.log(getCss(oBox, "left"));// "200px"  200
+
+
+</script>
+</body>
+</html>
