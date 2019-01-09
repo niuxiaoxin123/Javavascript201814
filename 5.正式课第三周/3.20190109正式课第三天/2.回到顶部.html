@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,img{
+            width:100%;
+
+        }
+        div{
+            display: none;
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            background: blue;
+            cursor: pointer;
+            position: fixed;
+            bottom:30px;
+            right:30px;
+            text-align: center;
+            line-height: 100px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<img src="6.png" alt="">
+<img src="6.png" alt="">
+<img src="6.png" alt="">
+<img src="6.png" alt="">
+<img src="6.png" alt="">
+<div id="box">回到顶部</div>
+<script src="utils.js"></script>
+<script>
+    var  oBox = document.getElementById("box");
+    /*oBox.onclick = function () {
+        // 设置当前纵向滚动条卷去的高度为0；
+        console.log(11);
+        utils.win("scrollTop",0)
+    }
+*/
+    // 淘宝渐渐回到顶部；每隔一小段时间对scrollTop重新设置一次；
+    oBox.onclick =function () {
+        // 使用定时器控制当前滚动条逐渐减小；
+        // 获取当前点击的最新时刻的scrollTop值；
+        var curT = utils.win("scrollTop");
+        var timer = setInterval(function () {
+            curT-=20;
+            // 当curT小于0时，清除定时器
+            if(curT<=0){
+               clearInterval(timer);
+            }
+            utils.win("scrollTop",curT);
+        },10)
+    }
+    // 获取当前可视区域的高度；
+    var  winH = utils.win("clientHeight");
+    // 如果滚动条卷起的高度大于等于winH,让回到顶部的div显示；
+    window.onscroll = function () {
+        // window 的onscroll事件，会随着滚动条的滚动，不断执行；
+        // onscroll的监听事件，会随着滑动滚动条，每隔相同的时间都会执行一次；
+        //console.log(100);
+        if(utils.win("scrollTop")>winH){
+            oBox.style.display="block";
+        }else{
+            oBox.style.display="none"
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

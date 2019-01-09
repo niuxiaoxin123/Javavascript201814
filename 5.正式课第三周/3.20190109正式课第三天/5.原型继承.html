@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function A() {
+        this.x = 100;
+        this.y = 200;
+    }
+    A.prototype.getX = function () {
+        console.log(this.x);
+    }
+    //var a = new A;// 自定义类，构造函数；
+    //console.log(a);// {x:100,y:200};
+    //a.getX();
+    function B() {
+        this.w=10;
+    }
+    //把A的实例赋值给B的原型，那么通过B创建的实例，可以使用A的私有属性和公有属性；这种继承方式就是原型继承；
+    // 原型继承继承了私有属性和公有属性；
+
+    B.prototype = new A;// 把A的实例赋值给B的原型；让B的原型指向A的实例；
+    B.prototype.a = function () {
+    }
+    var b = new B;
+    b.getX()
+    function C() {
+    }
+    C.prototype = new Array;
+    var c  = new C;
+    c.pop();
+    //
+    function D() {
+    }
+    var d = new D;
+    D.prototype = {
+        a:1
+    }
+    console.log(d.a);
+
+
+</script>
+</body>
+</html>

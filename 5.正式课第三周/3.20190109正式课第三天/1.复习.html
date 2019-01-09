@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #outer{
+        position: relative;
+        width:300px;
+        height:300px;
+        background: red;
+        margin:100px auto;
+    }
+    #inner{
+        position: relative;
+        width:200px;
+        height:200px;
+        background: yellow;
+        margin:auto;
+        border:10px solid pink;
+    }
+    #center{
+        width:100px;
+        height:100px;
+        background: blue;
+        border:10px solid pink;
+        margin: auto;
+    }
+</style>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div id="center"></div>
+    </div>
+</div>
+<script>
+    // 1.数据类型检测的封装；
+    // 1. 闭包  2.闭包存值   3. window.checkType
+
+    // 2. JS的盒子模型
+    // 13个属性
+    // 1. client系列：  clientWidth  clientHeight  clientLeft clientTop
+    // clientWidth : padding*2+width
+    // clientLeft : 左边框的宽度
+
+    // 2. offset系列： offsetWidth  offsetHeight offsetLeft  offsetTop  offsetParent
+    // offsetWidth : 整个盒子带边框的宽度
+    // offsetLeft : 左偏移量
+    // offsetParent : 父级参照物；
+
+    // 3. scroll系列 ： scrollWidth scrollHeight  scrollLeft  scrollTop
+    // 计算元素到body的偏移量；
+    //1.自己的做偏移量+ 父级参照物的边框+父级的偏移量+...
+    var oBox = document.getElementById("center");
+    function  offset(curEle){
+        var left = curEle.offsetLeft;
+        var top = curEle.offsetTop;
+        var parent = curEle.offsetParent;
+        //循环判断他的父级参照物有没有
+        while (parent.nodeName!=="BODY"){
+            //是如果他的父级参照物不body
+            console.log(parent);
+            left+=parent.clientLeft+parent.offsetLeft;
+            top+=parent.clientTop+parent.offsetTop;
+            //取他父级的父级参照物
+            parent=parent.offsetParent;
+        }
+        return{
+            left,
+            top
+        }
+    }
+    console.log(offset(oBox));
+
+    // scrollLeft  scrollTop
+    // 可读写属性
+    // 封装当前浏览器可视窗口的滚动条卷去高度；
+    function win(attr,val) {
+        if(typeof val==='undefined'){
+            return document.documentElement[attr]|| document.body[attr];
+        }else{
+            document.documentElement[attr]=val;
+            document.body[attr]=val
+        }
+    }
+    console.log(win("scrollTop"));// 获取
+    console.log(win("scrollTop", 300));// 设置
+
+
+</script>
+</body>
+</html>

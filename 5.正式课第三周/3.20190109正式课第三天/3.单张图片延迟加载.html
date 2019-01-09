@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width:300px;
+            height:300px;
+            margin:1000px auto;
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="img/default.jpg" trueImg="img/1.jpg" alt="">
+</div>
+<script src="utils.js"></script>
+<script>
+    var img = document.getElementsByTagName("img")[0];
+    // 计算图片真正显示的临界条件
+    // 当卷去的高度+浏览器一屏的高度>=盒子的上偏移量+自身的高度；
+    // 1.获取浏览器可视窗口的高度
+    var  winH = utils.win("clientHeight");
+    // 2. 获取盒子的距离body的上偏移量
+    var imgT = utils.offset(img).top;
+    // 3. 获取盒子的自身高度
+    var imgH = img.offsetHeight;
+
+    window.onscroll = function () {
+        var  winT = utils.win("scrollTop");
+        if(img.load){
+            return;// 如果图片的load属性是true，说明已经加载成功
+        }
+        if(winT+winH>=imgT+imgH){
+           var trueAddress = img.getAttribute("trueImg");
+           //在给真实路径，先验证一下当前是否成功；
+            var newImg = document.createElement("img");
+            newImg.src = trueAddress;
+            newImg.onload=function () {
+                console.log(199);
+                // 当图片路径没有问题，才会执行这个函数；
+                img.src=trueAddress;
+                img.load = true;
+                fadeIn(img)
+            }
+        }
+    }
+    // 逐渐新增透明度；
+    function fadeIn(curEle) {
+        utils.css(curEle,"opacity",0.3);// 给图片一个初始的透明度
+        var timer=setInterval(function () {
+            // 获取当前最新的透明度
+            var curOpa = Number(utils.css(curEle,"opacity"));
+            curOpa+=0.1;
+            if(curOpa>=1){
+                utils.css(curEle,"opacity",1);
+                clearInterval(timer);
+                return;
+            }
+            utils.css(curEle,"opacity",curOpa);
+        },100)
+    }
+
+
+
+
+</script>
+</body>
+</html>

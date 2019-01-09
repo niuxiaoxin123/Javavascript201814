@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function A(){
+        this.x = 100;
+        this.y = 200;
+    }
+    A.prototype.getX = function () {
+        console.log(this.x);
+    }
+
+    function B() {
+        // 让A执行，并且改变了A中的this指向类B的实例；类B创建的实例中和类A的私有属性一模一样的；但是并不能继承类A的公有的属性--> call继承；
+        //this --> 类B的实例
+        this.x =500;
+        A.call(this);
+    }
+    var b = new B;//{x:100,y:200}
+    //b.getX();
+    console.log(b);// {}
+
+
+</script>
+</body>
+</html>
